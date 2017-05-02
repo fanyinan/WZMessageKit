@@ -35,38 +35,3 @@ func swiftClassFromString(_ className: String) -> AnyClass? {
   return nil
 }
 
-extension UIImageView {
-  
-  func asyncSetImage(with named: String, imageSize: CGSize? = nil) {
-    
-    let tmpTag = (tag + 1) % 100
-    tag = tmpTag
-    
-    exChangeGlobalQueue {
-      
-      guard let sourceImage = UIImage(named: named) else { return }
-      
-      var imageSize = imageSize ?? self.frame.size
-      
-      if imageSize.width == 0 || imageSize.height == 0 {
-        imageSize = sourceImage.size
-      }
-      
-      UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)
-      
-      sourceImage.draw(in: CGRect(origin: CGPoint.zero, size: imageSize))
-      
-      let targetImage = UIGraphicsGetImageFromCurrentImageContext()
-      
-      UIGraphicsEndImageContext()
-      
-      exChangeMainQueue {
-        
-        guard tmpTag == self.tag else { return }
-        
-        self.image = targetImage
-        
-      }
-    }
-  }
-}

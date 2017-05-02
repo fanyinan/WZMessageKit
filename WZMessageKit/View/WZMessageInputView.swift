@@ -6,7 +6,7 @@
 //  Copyright © 2017年 范祎楠. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 open class WZMessageInputView: UIView {
   

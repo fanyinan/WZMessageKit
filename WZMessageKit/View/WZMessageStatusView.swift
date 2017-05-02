@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WZRichTextView
 
 public struct WZMessageStatus: Equatable {
 

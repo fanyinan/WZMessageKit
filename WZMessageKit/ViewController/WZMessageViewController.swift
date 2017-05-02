@@ -98,7 +98,6 @@ open class WZMessageViewController: UIViewController {
   }
   
   deinit {
-    AudioRecordHUDManager.sharedInstance.removeAudioRecordHUD()
     WZMessageViewManager.shared.end()
   }
   

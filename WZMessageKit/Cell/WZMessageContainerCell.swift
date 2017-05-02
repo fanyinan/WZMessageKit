@@ -147,9 +147,10 @@ open class WZMessageContainerCell: UITableViewCell {
   open func createTimestampLabel() -> UILabel {
     
     let timestampLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 18))
-    timestampLabel.textColor = .jx_subText
+    timestampLabel.textColor = .subText
     timestampLabel.font = UIFont.systemFont(ofSize: 12)
     timestampLabel.backgroundColor = UIColor(hex: 0xeeeeee)
+    timestampLabel.textAlignment = .center
     
     return timestampLabel
   }
@@ -177,15 +178,6 @@ open class WZMessageContainerCell: UITableViewCell {
     timestampView.po_frameBuilder().setWidth(contentView.frame.width)
     timestampView.po_frameBuilder().alignLeftInSuperview(withInset: 0)
     timestampView.po_frameBuilder().setHeight(isDisplayTimestamp == true ? WZMessageContainerCell.timestampViewHeight : 0)
-    
-    guard isDisplayTimestamp else { return }
-    
-    WZMessageCellTools.asynCalculateTextSize(with: timestampLabel.text!, fontSize: timestampLabel.font.pointSize, maxWidth: 0.6 * UIScreen.main.bounds.width) { (size) in
-      
-      self.timestampLabel.po_frameBuilder().setWidth(ceil(size.width))
-      self.timestampLabel.po_frameBuilder().centerInSuperview()
-      
-    }
   }
   
   open func configAvatarWithMessage() {

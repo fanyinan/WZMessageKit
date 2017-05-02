@@ -12,27 +12,27 @@
 		CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */; };
 		CF2FA98F1EB8BAE800E5DE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */; };
 		CF2FA9921EB8BAE800E5DE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */; };
-		CF2FA9B61EB8BAF700E5DE67 /* WZMessageContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA99B1EB8BAF700E5DE67 /* WZMessageContainerCell.swift */; };
-		CF2FA9B71EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA99E1EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift */; };
-		CF2FA9B81EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA99F1EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift */; };
-		CF2FA9B91EB8BAF700E5DE67 /* MessageViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A11EB8BAF700E5DE67 /* MessageViewLoader.swift */; };
-		CF2FA9BA1EB8BAF700E5DE67 /* WZMessageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A21EB8BAF700E5DE67 /* WZMessageViewManager.swift */; };
-		CF2FA9BB1EB8BAF700E5DE67 /* WZMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A41EB8BAF700E5DE67 /* WZMessageData.swift */; };
-		CF2FA9BC1EB8BAF700E5DE67 /* WZMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A51EB8BAF700E5DE67 /* WZMessageEvent.swift */; };
-		CF2FA9BD1EB8BAF700E5DE67 /* DictArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A71EB8BAF700E5DE67 /* DictArray.swift */; };
-		CF2FA9C01EB8BAF700E5DE67 /* WZCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9AA1EB8BAF700E5DE67 /* WZCacheManager.swift */; };
-		CF2FA9C21EB8BAF700E5DE67 /* WZMessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9AC1EB8BAF700E5DE67 /* WZMessageUtility.swift */; };
-		CF2FA9C31EB8BAF700E5DE67 /* MessageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9AE1EB8BAF700E5DE67 /* MessageLoadingView.swift */; };
-		CF2FA9C41EB8BAF700E5DE67 /* MessageLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9AF1EB8BAF700E5DE67 /* MessageLoadingView.xib */; };
-		CF2FA9C51EB8BAF700E5DE67 /* WZMessageBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B01EB8BAF700E5DE67 /* WZMessageBaseView.swift */; };
-		CF2FA9C61EB8BAF700E5DE67 /* WZMessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B11EB8BAF700E5DE67 /* WZMessageInputView.swift */; };
-		CF2FA9C71EB8BAF700E5DE67 /* WZMessageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B21EB8BAF700E5DE67 /* WZMessageStatusView.swift */; };
-		CF2FA9C81EB8BAF700E5DE67 /* WZMessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B31EB8BAF700E5DE67 /* WZMessageTableView.swift */; };
-		CF2FA9C91EB8BAF700E5DE67 /* WZMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B51EB8BAF700E5DE67 /* WZMessageViewController.swift */; };
-		CF2FA9CF1EB8BCC100E5DE67 /* KeyBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9CE1EB8BCC100E5DE67 /* KeyBoardController.swift */; };
-		CF2FA9D11EB8BD1C00E5DE67 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9D01EB8BD1C00E5DE67 /* UIColor+extension.swift */; };
-		CF2FA9D91EB8BDE900E5DE67 /* POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9D61EB8BDE900E5DE67 /* POViewFrameBuilder.m */; };
-		CF2FA9DA1EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9D81EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m */; };
+		CF2FAAA31EB8D14400E5DE67 /* WZMessageContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA831EB8D14300E5DE67 /* WZMessageContainerCell.swift */; };
+		CF2FAAA41EB8D14400E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA851EB8D14300E5DE67 /* WZMessageBottomViewPoppingController.swift */; };
+		CF2FAAA51EB8D14400E5DE67 /* WZMessageInputViewPopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA861EB8D14300E5DE67 /* WZMessageInputViewPopController.swift */; };
+		CF2FAAA61EB8D14400E5DE67 /* MessageViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA881EB8D14400E5DE67 /* MessageViewLoader.swift */; };
+		CF2FAAA71EB8D14400E5DE67 /* WZMessageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA891EB8D14400E5DE67 /* WZMessageViewManager.swift */; };
+		CF2FAAA81EB8D14400E5DE67 /* WZMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA8B1EB8D14400E5DE67 /* WZMessageData.swift */; };
+		CF2FAAA91EB8D14400E5DE67 /* WZMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA8C1EB8D14400E5DE67 /* WZMessageEvent.swift */; };
+		CF2FAAAA1EB8D14400E5DE67 /* DictArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA8E1EB8D14400E5DE67 /* DictArray.swift */; };
+		CF2FAAAB1EB8D14400E5DE67 /* KeyBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA8F1EB8D14400E5DE67 /* KeyBoardController.swift */; };
+		CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA901EB8D14400E5DE67 /* UIColor+extension.swift */; };
+		CF2FAAAD1EB8D14400E5DE67 /* WZCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA911EB8D14400E5DE67 /* WZCacheManager.swift */; };
+		CF2FAAAE1EB8D14400E5DE67 /* WZMessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA921EB8D14400E5DE67 /* WZMessageUtility.swift */; };
+		CF2FAAAF1EB8D14400E5DE67 /* POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA971EB8D14400E5DE67 /* POViewFrameBuilder.m */; };
+		CF2FAAB01EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA991EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m */; };
+		CF2FAAB11EB8D14400E5DE67 /* MessageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9B1EB8D14400E5DE67 /* MessageLoadingView.swift */; };
+		CF2FAAB21EB8D14400E5DE67 /* MessageLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2FAA9C1EB8D14400E5DE67 /* MessageLoadingView.xib */; };
+		CF2FAAB31EB8D14400E5DE67 /* WZMessageBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9D1EB8D14400E5DE67 /* WZMessageBaseView.swift */; };
+		CF2FAAB41EB8D14400E5DE67 /* WZMessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9E1EB8D14400E5DE67 /* WZMessageInputView.swift */; };
+		CF2FAAB51EB8D14400E5DE67 /* WZMessageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9F1EB8D14400E5DE67 /* WZMessageStatusView.swift */; };
+		CF2FAAB61EB8D14400E5DE67 /* WZMessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAAA01EB8D14400E5DE67 /* WZMessageTableView.swift */; };
+		CF2FAAB71EB8D14400E5DE67 /* WZMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAAA21EB8D14400E5DE67 /* WZMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,31 +43,31 @@
 		CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2FA9911EB8BAE800E5DE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF2FA9931EB8BAE800E5DE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF2FA99B1EB8BAF700E5DE67 /* WZMessageContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageContainerCell.swift; sourceTree = "<group>"; };
-		CF2FA99E1EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBottomViewPoppingController.swift; sourceTree = "<group>"; };
-		CF2FA99F1EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputViewPopController.swift; sourceTree = "<group>"; };
-		CF2FA9A11EB8BAF700E5DE67 /* MessageViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewLoader.swift; sourceTree = "<group>"; };
-		CF2FA9A21EB8BAF700E5DE67 /* WZMessageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewManager.swift; sourceTree = "<group>"; };
-		CF2FA9A41EB8BAF700E5DE67 /* WZMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageData.swift; sourceTree = "<group>"; };
-		CF2FA9A51EB8BAF700E5DE67 /* WZMessageEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageEvent.swift; sourceTree = "<group>"; };
-		CF2FA9A71EB8BAF700E5DE67 /* DictArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictArray.swift; sourceTree = "<group>"; };
-		CF2FA9AA1EB8BAF700E5DE67 /* WZCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZCacheManager.swift; sourceTree = "<group>"; };
-		CF2FA9AC1EB8BAF700E5DE67 /* WZMessageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageUtility.swift; sourceTree = "<group>"; };
-		CF2FA9AE1EB8BAF700E5DE67 /* MessageLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLoadingView.swift; sourceTree = "<group>"; };
-		CF2FA9AF1EB8BAF700E5DE67 /* MessageLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageLoadingView.xib; sourceTree = "<group>"; };
-		CF2FA9B01EB8BAF700E5DE67 /* WZMessageBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBaseView.swift; sourceTree = "<group>"; };
-		CF2FA9B11EB8BAF700E5DE67 /* WZMessageInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputView.swift; sourceTree = "<group>"; };
-		CF2FA9B21EB8BAF700E5DE67 /* WZMessageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageStatusView.swift; sourceTree = "<group>"; };
-		CF2FA9B31EB8BAF700E5DE67 /* WZMessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTableView.swift; sourceTree = "<group>"; };
-		CF2FA9B51EB8BAF700E5DE67 /* WZMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewController.swift; sourceTree = "<group>"; };
-		CF2FA9CE1EB8BCC100E5DE67 /* KeyBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardController.swift; sourceTree = "<group>"; };
-		CF2FA9D01EB8BD1C00E5DE67 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
-		CF2FA9D41EB8BDE900E5DE67 /* POGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POGeometry.h; sourceTree = "<group>"; };
-		CF2FA9D51EB8BDE900E5DE67 /* POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POViewFrameBuilder.h; sourceTree = "<group>"; };
-		CF2FA9D61EB8BDE900E5DE67 /* POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POViewFrameBuilder.m; sourceTree = "<group>"; };
-		CF2FA9D71EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+POViewFrameBuilder.h"; sourceTree = "<group>"; };
-		CF2FA9D81EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+POViewFrameBuilder.m"; sourceTree = "<group>"; };
 		CF2FA9E41EB8BEA800E5DE67 /* WZMessageKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WZMessageKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF2FAA831EB8D14300E5DE67 /* WZMessageContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageContainerCell.swift; sourceTree = "<group>"; };
+		CF2FAA851EB8D14300E5DE67 /* WZMessageBottomViewPoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBottomViewPoppingController.swift; sourceTree = "<group>"; };
+		CF2FAA861EB8D14300E5DE67 /* WZMessageInputViewPopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputViewPopController.swift; sourceTree = "<group>"; };
+		CF2FAA881EB8D14400E5DE67 /* MessageViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewLoader.swift; sourceTree = "<group>"; };
+		CF2FAA891EB8D14400E5DE67 /* WZMessageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewManager.swift; sourceTree = "<group>"; };
+		CF2FAA8B1EB8D14400E5DE67 /* WZMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageData.swift; sourceTree = "<group>"; };
+		CF2FAA8C1EB8D14400E5DE67 /* WZMessageEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageEvent.swift; sourceTree = "<group>"; };
+		CF2FAA8E1EB8D14400E5DE67 /* DictArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictArray.swift; sourceTree = "<group>"; };
+		CF2FAA8F1EB8D14400E5DE67 /* KeyBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardController.swift; sourceTree = "<group>"; };
+		CF2FAA901EB8D14400E5DE67 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		CF2FAA911EB8D14400E5DE67 /* WZCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZCacheManager.swift; sourceTree = "<group>"; };
+		CF2FAA921EB8D14400E5DE67 /* WZMessageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageUtility.swift; sourceTree = "<group>"; };
+		CF2FAA951EB8D14400E5DE67 /* POGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POGeometry.h; sourceTree = "<group>"; };
+		CF2FAA961EB8D14400E5DE67 /* POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POViewFrameBuilder.h; sourceTree = "<group>"; };
+		CF2FAA971EB8D14400E5DE67 /* POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POViewFrameBuilder.m; sourceTree = "<group>"; };
+		CF2FAA981EB8D14400E5DE67 /* UIView+POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+POViewFrameBuilder.h"; sourceTree = "<group>"; };
+		CF2FAA991EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+POViewFrameBuilder.m"; sourceTree = "<group>"; };
+		CF2FAA9B1EB8D14400E5DE67 /* MessageLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLoadingView.swift; sourceTree = "<group>"; };
+		CF2FAA9C1EB8D14400E5DE67 /* MessageLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageLoadingView.xib; sourceTree = "<group>"; };
+		CF2FAA9D1EB8D14400E5DE67 /* WZMessageBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBaseView.swift; sourceTree = "<group>"; };
+		CF2FAA9E1EB8D14400E5DE67 /* WZMessageInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputView.swift; sourceTree = "<group>"; };
+		CF2FAA9F1EB8D14400E5DE67 /* WZMessageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageStatusView.swift; sourceTree = "<group>"; };
+		CF2FAAA01EB8D14400E5DE67 /* WZMessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTableView.swift; sourceTree = "<group>"; };
+		CF2FAAA21EB8D14400E5DE67 /* WZMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		CF2FA97B1EB8BAE800E5DE67 = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9991EB8BAF700E5DE67 /* WZMessageKit */,
+				CF2FAA811EB8D14300E5DE67 /* WZMessageKit */,
 				CF2FA9861EB8BAE800E5DE67 /* WZMessageKitDemo */,
 				CF2FA9851EB8BAE800E5DE67 /* Products */,
 			);
@@ -112,115 +112,108 @@
 			path = WZMessageKitDemo;
 			sourceTree = "<group>";
 		};
-		CF2FA9991EB8BAF700E5DE67 /* WZMessageKit */ = {
+		CF2FAA811EB8D14300E5DE67 /* WZMessageKit */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9D21EB8BDE900E5DE67 /* Vendor */,
-				CF2FA99A1EB8BAF700E5DE67 /* Cell */,
-				CF2FA99C1EB8BAF700E5DE67 /* Config */,
-				CF2FA99D1EB8BAF700E5DE67 /* Controller */,
-				CF2FA9A01EB8BAF700E5DE67 /* Manager */,
-				CF2FA9A31EB8BAF700E5DE67 /* Model */,
-				CF2FA9A61EB8BAF700E5DE67 /* Utils */,
-				CF2FA9AD1EB8BAF700E5DE67 /* View */,
-				CF2FA9B41EB8BAF700E5DE67 /* ViewController */,
+				CF2FAA821EB8D14300E5DE67 /* Cell */,
+				CF2FAA841EB8D14300E5DE67 /* Controller */,
+				CF2FAA871EB8D14400E5DE67 /* Manager */,
+				CF2FAA8A1EB8D14400E5DE67 /* Model */,
+				CF2FAA8D1EB8D14400E5DE67 /* Utils */,
+				CF2FAA931EB8D14400E5DE67 /* Vendor */,
+				CF2FAA9A1EB8D14400E5DE67 /* View */,
+				CF2FAAA11EB8D14400E5DE67 /* ViewController */,
 			);
-			path = WZMessageKit;
+			name = WZMessageKit;
+			path = ../../WZMessageKit;
 			sourceTree = "<group>";
 		};
-		CF2FA99A1EB8BAF700E5DE67 /* Cell */ = {
+		CF2FAA821EB8D14300E5DE67 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA99B1EB8BAF700E5DE67 /* WZMessageContainerCell.swift */,
+				CF2FAA831EB8D14300E5DE67 /* WZMessageContainerCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		CF2FA99C1EB8BAF700E5DE67 /* Config */ = {
+		CF2FAA841EB8D14300E5DE67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		CF2FA99D1EB8BAF700E5DE67 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				CF2FA99E1EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift */,
-				CF2FA99F1EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift */,
+				CF2FAA851EB8D14300E5DE67 /* WZMessageBottomViewPoppingController.swift */,
+				CF2FAA861EB8D14300E5DE67 /* WZMessageInputViewPopController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		CF2FA9A01EB8BAF700E5DE67 /* Manager */ = {
+		CF2FAA871EB8D14400E5DE67 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9A11EB8BAF700E5DE67 /* MessageViewLoader.swift */,
-				CF2FA9A21EB8BAF700E5DE67 /* WZMessageViewManager.swift */,
+				CF2FAA881EB8D14400E5DE67 /* MessageViewLoader.swift */,
+				CF2FAA891EB8D14400E5DE67 /* WZMessageViewManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		CF2FA9A31EB8BAF700E5DE67 /* Model */ = {
+		CF2FAA8A1EB8D14400E5DE67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9A41EB8BAF700E5DE67 /* WZMessageData.swift */,
-				CF2FA9A51EB8BAF700E5DE67 /* WZMessageEvent.swift */,
+				CF2FAA8B1EB8D14400E5DE67 /* WZMessageData.swift */,
+				CF2FAA8C1EB8D14400E5DE67 /* WZMessageEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CF2FA9A61EB8BAF700E5DE67 /* Utils */ = {
+		CF2FAA8D1EB8D14400E5DE67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9A71EB8BAF700E5DE67 /* DictArray.swift */,
-				CF2FA9AA1EB8BAF700E5DE67 /* WZCacheManager.swift */,
-				CF2FA9AC1EB8BAF700E5DE67 /* WZMessageUtility.swift */,
-				CF2FA9CE1EB8BCC100E5DE67 /* KeyBoardController.swift */,
-				CF2FA9D01EB8BD1C00E5DE67 /* UIColor+extension.swift */,
+				CF2FAA8E1EB8D14400E5DE67 /* DictArray.swift */,
+				CF2FAA8F1EB8D14400E5DE67 /* KeyBoardController.swift */,
+				CF2FAA901EB8D14400E5DE67 /* UIColor+extension.swift */,
+				CF2FAA911EB8D14400E5DE67 /* WZCacheManager.swift */,
+				CF2FAA921EB8D14400E5DE67 /* WZMessageUtility.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		CF2FA9AD1EB8BAF700E5DE67 /* View */ = {
+		CF2FAA931EB8D14400E5DE67 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9AE1EB8BAF700E5DE67 /* MessageLoadingView.swift */,
-				CF2FA9AF1EB8BAF700E5DE67 /* MessageLoadingView.xib */,
-				CF2FA9B01EB8BAF700E5DE67 /* WZMessageBaseView.swift */,
-				CF2FA9B11EB8BAF700E5DE67 /* WZMessageInputView.swift */,
-				CF2FA9B21EB8BAF700E5DE67 /* WZMessageStatusView.swift */,
-				CF2FA9B31EB8BAF700E5DE67 /* WZMessageTableView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CF2FA9B41EB8BAF700E5DE67 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CF2FA9B51EB8BAF700E5DE67 /* WZMessageViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		CF2FA9D21EB8BDE900E5DE67 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				CF2FA9D31EB8BDE900E5DE67 /* POViewFrameBuilder */,
+				CF2FAA941EB8D14400E5DE67 /* POViewFrameBuilder */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
 		};
-		CF2FA9D31EB8BDE900E5DE67 /* POViewFrameBuilder */ = {
+		CF2FAA941EB8D14400E5DE67 /* POViewFrameBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FA9D41EB8BDE900E5DE67 /* POGeometry.h */,
-				CF2FA9D51EB8BDE900E5DE67 /* POViewFrameBuilder.h */,
-				CF2FA9D61EB8BDE900E5DE67 /* POViewFrameBuilder.m */,
-				CF2FA9D71EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.h */,
-				CF2FA9D81EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m */,
+				CF2FAA951EB8D14400E5DE67 /* POGeometry.h */,
+				CF2FAA961EB8D14400E5DE67 /* POViewFrameBuilder.h */,
+				CF2FAA971EB8D14400E5DE67 /* POViewFrameBuilder.m */,
+				CF2FAA981EB8D14400E5DE67 /* UIView+POViewFrameBuilder.h */,
+				CF2FAA991EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m */,
 			);
 			path = POViewFrameBuilder;
+			sourceTree = "<group>";
+		};
+		CF2FAA9A1EB8D14400E5DE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FAA9B1EB8D14400E5DE67 /* MessageLoadingView.swift */,
+				CF2FAA9C1EB8D14400E5DE67 /* MessageLoadingView.xib */,
+				CF2FAA9D1EB8D14400E5DE67 /* WZMessageBaseView.swift */,
+				CF2FAA9E1EB8D14400E5DE67 /* WZMessageInputView.swift */,
+				CF2FAA9F1EB8D14400E5DE67 /* WZMessageStatusView.swift */,
+				CF2FAAA01EB8D14400E5DE67 /* WZMessageTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF2FAAA11EB8D14400E5DE67 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FAAA21EB8D14400E5DE67 /* WZMessageViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF2FA9921EB8BAE800E5DE67 /* LaunchScreen.storyboard in Resources */,
-				CF2FA9C41EB8BAF700E5DE67 /* MessageLoadingView.xib in Resources */,
+				CF2FAAB21EB8D14400E5DE67 /* MessageLoadingView.xib in Resources */,
 				CF2FA98F1EB8BAE800E5DE67 /* Assets.xcassets in Resources */,
 				CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */,
 			);
@@ -297,28 +290,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2FA9C81EB8BAF700E5DE67 /* WZMessageTableView.swift in Sources */,
-				CF2FA9C71EB8BAF700E5DE67 /* WZMessageStatusView.swift in Sources */,
-				CF2FA9C01EB8BAF700E5DE67 /* WZCacheManager.swift in Sources */,
-				CF2FA9D11EB8BD1C00E5DE67 /* UIColor+extension.swift in Sources */,
-				CF2FA9C31EB8BAF700E5DE67 /* MessageLoadingView.swift in Sources */,
-				CF2FA9CF1EB8BCC100E5DE67 /* KeyBoardController.swift in Sources */,
-				CF2FA9C91EB8BAF700E5DE67 /* WZMessageViewController.swift in Sources */,
-				CF2FA9B81EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift in Sources */,
-				CF2FA9C51EB8BAF700E5DE67 /* WZMessageBaseView.swift in Sources */,
-				CF2FA9DA1EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m in Sources */,
-				CF2FA9B71EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */,
+				CF2FAAB41EB8D14400E5DE67 /* WZMessageInputView.swift in Sources */,
+				CF2FAAB61EB8D14400E5DE67 /* WZMessageTableView.swift in Sources */,
+				CF2FAAAD1EB8D14400E5DE67 /* WZCacheManager.swift in Sources */,
+				CF2FAAB71EB8D14400E5DE67 /* WZMessageViewController.swift in Sources */,
+				CF2FAAAE1EB8D14400E5DE67 /* WZMessageUtility.swift in Sources */,
+				CF2FAAA51EB8D14400E5DE67 /* WZMessageInputViewPopController.swift in Sources */,
+				CF2FAAA41EB8D14400E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */,
+				CF2FAAB31EB8D14400E5DE67 /* WZMessageBaseView.swift in Sources */,
 				CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */,
-				CF2FA9C21EB8BAF700E5DE67 /* WZMessageUtility.swift in Sources */,
-				CF2FA9D91EB8BDE900E5DE67 /* POViewFrameBuilder.m in Sources */,
+				CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */,
+				CF2FAAB01EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m in Sources */,
 				CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */,
-				CF2FA9BA1EB8BAF700E5DE67 /* WZMessageViewManager.swift in Sources */,
-				CF2FA9BD1EB8BAF700E5DE67 /* DictArray.swift in Sources */,
-				CF2FA9C61EB8BAF700E5DE67 /* WZMessageInputView.swift in Sources */,
-				CF2FA9B61EB8BAF700E5DE67 /* WZMessageContainerCell.swift in Sources */,
-				CF2FA9BB1EB8BAF700E5DE67 /* WZMessageData.swift in Sources */,
-				CF2FA9B91EB8BAF700E5DE67 /* MessageViewLoader.swift in Sources */,
-				CF2FA9BC1EB8BAF700E5DE67 /* WZMessageEvent.swift in Sources */,
+				CF2FAAA71EB8D14400E5DE67 /* WZMessageViewManager.swift in Sources */,
+				CF2FAAAF1EB8D14400E5DE67 /* POViewFrameBuilder.m in Sources */,
+				CF2FAAAA1EB8D14400E5DE67 /* DictArray.swift in Sources */,
+				CF2FAAB51EB8D14400E5DE67 /* WZMessageStatusView.swift in Sources */,
+				CF2FAAA31EB8D14400E5DE67 /* WZMessageContainerCell.swift in Sources */,
+				CF2FAAB11EB8D14400E5DE67 /* MessageLoadingView.swift in Sources */,
+				CF2FAAA81EB8D14400E5DE67 /* WZMessageData.swift in Sources */,
+				CF2FAAA61EB8D14400E5DE67 /* MessageViewLoader.swift in Sources */,
+				CF2FAAA91EB8D14400E5DE67 /* WZMessageEvent.swift in Sources */,
+				CF2FAAAB1EB8D14400E5DE67 /* KeyBoardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
