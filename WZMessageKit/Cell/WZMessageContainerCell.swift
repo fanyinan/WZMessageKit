@@ -70,7 +70,7 @@ open class WZMessageContainerCell: UITableViewCell {
     
   }
   
-  func configureCell(messageData: WZMessageData, isDisplayTimestamp: Bool) {
+  public func configureCell(messageData: WZMessageData, isDisplayTimestamp: Bool) {
     
     self.messageData = messageData
     self.isDisplayTimestamp = isDisplayTimestamp
@@ -78,17 +78,17 @@ open class WZMessageContainerCell: UITableViewCell {
     delegate = messageViewController as WZMessageContainerCellDelegate
   }
   
-  func setTimeStamp(_ timeString: String) {
+  public func setTimeStamp(_ timeString: String) {
     
     guard timestampLabel.text != timeString else { return }
     timestampLabel.text = timeString
   }
   
-  func setMessageStatus(_ status: WZMessageStatus) {
+  public func setMessageStatus(_ status: WZMessageStatus) {
     statusView.setupUI(status: status)
   }
   
-  func reload(scrollToBottom: Bool) {
+  public func reload(scrollToBottom: Bool) {
     
     let indexPath = IndexPath(row: row, section: 0)
     
@@ -99,22 +99,20 @@ open class WZMessageContainerCell: UITableViewCell {
     }
   }
   
-  func messageCellDidEndDisplay() {
+  public func messageCellDidEndDisplay() {
     customContentView.messageViewDidEndDisplay()
   }
   
-  func messageCellWillDisplay() {
+  public func messageCellWillDisplay() {
     customContentView.messageViewWillDisplay()
   }
   
-  func targetViewForLongPress() -> UIView? { return nil }
-  
-  class func calculateMessageCellHeightWith(messageData: WZMessageData, isDisplayTimestamp: Bool) -> CGFloat {
+  public class func calculateMessageCellHeightWith(messageData: WZMessageData, isDisplayTimestamp: Bool) -> CGFloat {
     
     return calculateMessageCellHeightWith(messageData: messageData, customContentViewHeight: calculateMessageCustomContentView(with: messageData).height, isDisplayTimestamp: isDisplayTimestamp)
   }
   
-  class func preloadData(messageData: WZMessageData, isDisplayTimestamp: Bool, tableViewHeight: CGFloat) {
+  public class func preloadData(messageData: WZMessageData, isDisplayTimestamp: Bool, tableViewHeight: CGFloat) {
     
     messageData.mappingMessageView.preloadData(with: messageData)
     
@@ -122,7 +120,7 @@ open class WZMessageContainerCell: UITableViewCell {
     WZMessageViewManager.shared.preload(with: messageData.mappingMessageView, with: cellHeight, maxHeight: tableViewHeight)
   }
   
-  class func getCustomViewMaxWidth(with messageData: WZMessageData) -> CGFloat {
+  public class func getCustomViewMaxWidth(with messageData: WZMessageData) -> CGFloat {
     
     if messageData.ownerType == .custom {
       
