@@ -1,0 +1,25 @@
+//
+//  WZMessageInputViewDelegate.swift
+//  WZMessageProject
+//
+//  Created by 范祎楠 on 2017/4/25.
+//  Copyright © 2017年 范祎楠. All rights reserved.
+//
+
+import Foundation
+
+open class WZMessageInputView: UIView {
+  
+  open var text: String {
+    get{
+      return ""
+    }
+    set{
+    }
+  }
+  
+  open func hideKeyboard() {}
+  open func showKeyboard() {}
+
+  open func shouldShowTextViewMenu(_ isShow: Bool) { }
+}

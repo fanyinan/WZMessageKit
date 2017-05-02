@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */; };
+		CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */; };
+		CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */; };
+		CF2FA98F1EB8BAE800E5DE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */; };
+		CF2FA9921EB8BAE800E5DE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */; };
+		CF2FA9B61EB8BAF700E5DE67 /* WZMessageContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA99B1EB8BAF700E5DE67 /* WZMessageContainerCell.swift */; };
+		CF2FA9B71EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA99E1EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift */; };
+		CF2FA9B81EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA99F1EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift */; };
+		CF2FA9B91EB8BAF700E5DE67 /* MessageViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A11EB8BAF700E5DE67 /* MessageViewLoader.swift */; };
+		CF2FA9BA1EB8BAF700E5DE67 /* WZMessageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A21EB8BAF700E5DE67 /* WZMessageViewManager.swift */; };
+		CF2FA9BB1EB8BAF700E5DE67 /* WZMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A41EB8BAF700E5DE67 /* WZMessageData.swift */; };
+		CF2FA9BC1EB8BAF700E5DE67 /* WZMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A51EB8BAF700E5DE67 /* WZMessageEvent.swift */; };
+		CF2FA9BD1EB8BAF700E5DE67 /* DictArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9A71EB8BAF700E5DE67 /* DictArray.swift */; };
+		CF2FA9C01EB8BAF700E5DE67 /* WZCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9AA1EB8BAF700E5DE67 /* WZCacheManager.swift */; };
+		CF2FA9C21EB8BAF700E5DE67 /* WZMessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9AC1EB8BAF700E5DE67 /* WZMessageUtility.swift */; };
+		CF2FA9C31EB8BAF700E5DE67 /* MessageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9AE1EB8BAF700E5DE67 /* MessageLoadingView.swift */; };
+		CF2FA9C41EB8BAF700E5DE67 /* MessageLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA9AF1EB8BAF700E5DE67 /* MessageLoadingView.xib */; };
+		CF2FA9C51EB8BAF700E5DE67 /* WZMessageBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B01EB8BAF700E5DE67 /* WZMessageBaseView.swift */; };
+		CF2FA9C61EB8BAF700E5DE67 /* WZMessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B11EB8BAF700E5DE67 /* WZMessageInputView.swift */; };
+		CF2FA9C71EB8BAF700E5DE67 /* WZMessageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B21EB8BAF700E5DE67 /* WZMessageStatusView.swift */; };
+		CF2FA9C81EB8BAF700E5DE67 /* WZMessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B31EB8BAF700E5DE67 /* WZMessageTableView.swift */; };
+		CF2FA9C91EB8BAF700E5DE67 /* WZMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9B51EB8BAF700E5DE67 /* WZMessageViewController.swift */; };
+		CF2FA9CF1EB8BCC100E5DE67 /* KeyBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9CE1EB8BCC100E5DE67 /* KeyBoardController.swift */; };
+		CF2FA9D11EB8BD1C00E5DE67 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9D01EB8BD1C00E5DE67 /* UIColor+extension.swift */; };
+		CF2FA9D91EB8BDE900E5DE67 /* POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9D61EB8BDE900E5DE67 /* POViewFrameBuilder.m */; };
+		CF2FA9DA1EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9D81EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF2FA9841EB8BAE800E5DE67 /* WZMessageKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZMessageKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF2FA98C1EB8BAE800E5DE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF2FA9911EB8BAE800E5DE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF2FA9931EB8BAE800E5DE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2FA99B1EB8BAF700E5DE67 /* WZMessageContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageContainerCell.swift; sourceTree = "<group>"; };
+		CF2FA99E1EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBottomViewPoppingController.swift; sourceTree = "<group>"; };
+		CF2FA99F1EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputViewPopController.swift; sourceTree = "<group>"; };
+		CF2FA9A11EB8BAF700E5DE67 /* MessageViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewLoader.swift; sourceTree = "<group>"; };
+		CF2FA9A21EB8BAF700E5DE67 /* WZMessageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewManager.swift; sourceTree = "<group>"; };
+		CF2FA9A41EB8BAF700E5DE67 /* WZMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageData.swift; sourceTree = "<group>"; };
+		CF2FA9A51EB8BAF700E5DE67 /* WZMessageEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageEvent.swift; sourceTree = "<group>"; };
+		CF2FA9A71EB8BAF700E5DE67 /* DictArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictArray.swift; sourceTree = "<group>"; };
+		CF2FA9AA1EB8BAF700E5DE67 /* WZCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZCacheManager.swift; sourceTree = "<group>"; };
+		CF2FA9AC1EB8BAF700E5DE67 /* WZMessageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageUtility.swift; sourceTree = "<group>"; };
+		CF2FA9AE1EB8BAF700E5DE67 /* MessageLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLoadingView.swift; sourceTree = "<group>"; };
+		CF2FA9AF1EB8BAF700E5DE67 /* MessageLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageLoadingView.xib; sourceTree = "<group>"; };
+		CF2FA9B01EB8BAF700E5DE67 /* WZMessageBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBaseView.swift; sourceTree = "<group>"; };
+		CF2FA9B11EB8BAF700E5DE67 /* WZMessageInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputView.swift; sourceTree = "<group>"; };
+		CF2FA9B21EB8BAF700E5DE67 /* WZMessageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageStatusView.swift; sourceTree = "<group>"; };
+		CF2FA9B31EB8BAF700E5DE67 /* WZMessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTableView.swift; sourceTree = "<group>"; };
+		CF2FA9B51EB8BAF700E5DE67 /* WZMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewController.swift; sourceTree = "<group>"; };
+		CF2FA9CE1EB8BCC100E5DE67 /* KeyBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardController.swift; sourceTree = "<group>"; };
+		CF2FA9D01EB8BD1C00E5DE67 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		CF2FA9D41EB8BDE900E5DE67 /* POGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POGeometry.h; sourceTree = "<group>"; };
+		CF2FA9D51EB8BDE900E5DE67 /* POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POViewFrameBuilder.h; sourceTree = "<group>"; };
+		CF2FA9D61EB8BDE900E5DE67 /* POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POViewFrameBuilder.m; sourceTree = "<group>"; };
+		CF2FA9D71EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+POViewFrameBuilder.h"; sourceTree = "<group>"; };
+		CF2FA9D81EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+POViewFrameBuilder.m"; sourceTree = "<group>"; };
+		CF2FA9E41EB8BEA800E5DE67 /* WZMessageKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WZMessageKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF2FA9811EB8BAE800E5DE67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF2FA97B1EB8BAE800E5DE67 = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9991EB8BAF700E5DE67 /* WZMessageKit */,
+				CF2FA9861EB8BAE800E5DE67 /* WZMessageKitDemo */,
+				CF2FA9851EB8BAE800E5DE67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF2FA9851EB8BAE800E5DE67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9841EB8BAE800E5DE67 /* WZMessageKitDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF2FA9861EB8BAE800E5DE67 /* WZMessageKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */,
+				CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */,
+				CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */,
+				CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */,
+				CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */,
+				CF2FA9E41EB8BEA800E5DE67 /* WZMessageKitDemo-Bridging-Header.h */,
+				CF2FA9931EB8BAE800E5DE67 /* Info.plist */,
+			);
+			path = WZMessageKitDemo;
+			sourceTree = "<group>";
+		};
+		CF2FA9991EB8BAF700E5DE67 /* WZMessageKit */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9D21EB8BDE900E5DE67 /* Vendor */,
+				CF2FA99A1EB8BAF700E5DE67 /* Cell */,
+				CF2FA99C1EB8BAF700E5DE67 /* Config */,
+				CF2FA99D1EB8BAF700E5DE67 /* Controller */,
+				CF2FA9A01EB8BAF700E5DE67 /* Manager */,
+				CF2FA9A31EB8BAF700E5DE67 /* Model */,
+				CF2FA9A61EB8BAF700E5DE67 /* Utils */,
+				CF2FA9AD1EB8BAF700E5DE67 /* View */,
+				CF2FA9B41EB8BAF700E5DE67 /* ViewController */,
+			);
+			path = WZMessageKit;
+			sourceTree = "<group>";
+		};
+		CF2FA99A1EB8BAF700E5DE67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA99B1EB8BAF700E5DE67 /* WZMessageContainerCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CF2FA99C1EB8BAF700E5DE67 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CF2FA99D1EB8BAF700E5DE67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA99E1EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift */,
+				CF2FA99F1EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF2FA9A01EB8BAF700E5DE67 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9A11EB8BAF700E5DE67 /* MessageViewLoader.swift */,
+				CF2FA9A21EB8BAF700E5DE67 /* WZMessageViewManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CF2FA9A31EB8BAF700E5DE67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9A41EB8BAF700E5DE67 /* WZMessageData.swift */,
+				CF2FA9A51EB8BAF700E5DE67 /* WZMessageEvent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF2FA9A61EB8BAF700E5DE67 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9A71EB8BAF700E5DE67 /* DictArray.swift */,
+				CF2FA9AA1EB8BAF700E5DE67 /* WZCacheManager.swift */,
+				CF2FA9AC1EB8BAF700E5DE67 /* WZMessageUtility.swift */,
+				CF2FA9CE1EB8BCC100E5DE67 /* KeyBoardController.swift */,
+				CF2FA9D01EB8BD1C00E5DE67 /* UIColor+extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CF2FA9AD1EB8BAF700E5DE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9AE1EB8BAF700E5DE67 /* MessageLoadingView.swift */,
+				CF2FA9AF1EB8BAF700E5DE67 /* MessageLoadingView.xib */,
+				CF2FA9B01EB8BAF700E5DE67 /* WZMessageBaseView.swift */,
+				CF2FA9B11EB8BAF700E5DE67 /* WZMessageInputView.swift */,
+				CF2FA9B21EB8BAF700E5DE67 /* WZMessageStatusView.swift */,
+				CF2FA9B31EB8BAF700E5DE67 /* WZMessageTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF2FA9B41EB8BAF700E5DE67 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9B51EB8BAF700E5DE67 /* WZMessageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CF2FA9D21EB8BDE900E5DE67 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9D31EB8BDE900E5DE67 /* POViewFrameBuilder */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		CF2FA9D31EB8BDE900E5DE67 /* POViewFrameBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CF2FA9D41EB8BDE900E5DE67 /* POGeometry.h */,
+				CF2FA9D51EB8BDE900E5DE67 /* POViewFrameBuilder.h */,
+				CF2FA9D61EB8BDE900E5DE67 /* POViewFrameBuilder.m */,
+				CF2FA9D71EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.h */,
+				CF2FA9D81EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m */,
+			);
+			path = POViewFrameBuilder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF2FA9831EB8BAE800E5DE67 /* WZMessageKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF2FA9961EB8BAE800E5DE67 /* Build configuration list for PBXNativeTarget "WZMessageKitDemo" */;
+			buildPhases = (
+				CF2FA9801EB8BAE800E5DE67 /* Sources */,
+				CF2FA9811EB8BAE800E5DE67 /* Frameworks */,
+				CF2FA9821EB8BAE800E5DE67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WZMessageKitDemo;
+			productName = WZMessageKitDemo;
+			productReference = CF2FA9841EB8BAE800E5DE67 /* WZMessageKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF2FA97C1EB8BAE800E5DE67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = fyn;
+				TargetAttributes = {
+					CF2FA9831EB8BAE800E5DE67 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 4RQRV7P524;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CF2FA97F1EB8BAE800E5DE67 /* Build configuration list for PBXProject "WZMessageKitDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF2FA97B1EB8BAE800E5DE67;
+			productRefGroup = CF2FA9851EB8BAE800E5DE67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF2FA9831EB8BAE800E5DE67 /* WZMessageKitDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF2FA9821EB8BAE800E5DE67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2FA9921EB8BAE800E5DE67 /* LaunchScreen.storyboard in Resources */,
+				CF2FA9C41EB8BAF700E5DE67 /* MessageLoadingView.xib in Resources */,
+				CF2FA98F1EB8BAE800E5DE67 /* Assets.xcassets in Resources */,
+				CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF2FA9801EB8BAE800E5DE67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2FA9C81EB8BAF700E5DE67 /* WZMessageTableView.swift in Sources */,
+				CF2FA9C71EB8BAF700E5DE67 /* WZMessageStatusView.swift in Sources */,
+				CF2FA9C01EB8BAF700E5DE67 /* WZCacheManager.swift in Sources */,
+				CF2FA9D11EB8BD1C00E5DE67 /* UIColor+extension.swift in Sources */,
+				CF2FA9C31EB8BAF700E5DE67 /* MessageLoadingView.swift in Sources */,
+				CF2FA9CF1EB8BCC100E5DE67 /* KeyBoardController.swift in Sources */,
+				CF2FA9C91EB8BAF700E5DE67 /* WZMessageViewController.swift in Sources */,
+				CF2FA9B81EB8BAF700E5DE67 /* WZMessageInputViewPopController.swift in Sources */,
+				CF2FA9C51EB8BAF700E5DE67 /* WZMessageBaseView.swift in Sources */,
+				CF2FA9DA1EB8BDE900E5DE67 /* UIView+POViewFrameBuilder.m in Sources */,
+				CF2FA9B71EB8BAF700E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */,
+				CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */,
+				CF2FA9C21EB8BAF700E5DE67 /* WZMessageUtility.swift in Sources */,
+				CF2FA9D91EB8BDE900E5DE67 /* POViewFrameBuilder.m in Sources */,
+				CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */,
+				CF2FA9BA1EB8BAF700E5DE67 /* WZMessageViewManager.swift in Sources */,
+				CF2FA9BD1EB8BAF700E5DE67 /* DictArray.swift in Sources */,
+				CF2FA9C61EB8BAF700E5DE67 /* WZMessageInputView.swift in Sources */,
+				CF2FA9B61EB8BAF700E5DE67 /* WZMessageContainerCell.swift in Sources */,
+				CF2FA9BB1EB8BAF700E5DE67 /* WZMessageData.swift in Sources */,
+				CF2FA9B91EB8BAF700E5DE67 /* MessageViewLoader.swift in Sources */,
+				CF2FA9BC1EB8BAF700E5DE67 /* WZMessageEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF2FA98C1EB8BAE800E5DE67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF2FA9911EB8BAE800E5DE67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF2FA9941EB8BAE800E5DE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF2FA9951EB8BAE800E5DE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF2FA9971EB8BAE800E5DE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4RQRV7P524;
+				INFOPLIST_FILE = WZMessageKitDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CF2FA9981EB8BAE800E5DE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4RQRV7P524;
+				INFOPLIST_FILE = WZMessageKitDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF2FA97F1EB8BAE800E5DE67 /* Build configuration list for PBXProject "WZMessageKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2FA9941EB8BAE800E5DE67 /* Debug */,
+				CF2FA9951EB8BAE800E5DE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF2FA9961EB8BAE800E5DE67 /* Build configuration list for PBXNativeTarget "WZMessageKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2FA9971EB8BAE800E5DE67 /* Debug */,
+				CF2FA9981EB8BAE800E5DE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF2FA97C1EB8BAE800E5DE67 /* Project object */;
+}
