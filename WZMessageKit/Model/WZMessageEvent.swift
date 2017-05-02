@@ -15,11 +15,11 @@ public enum WZMessageEventType {
 
 public class WZMessageEvent: NSObject {
   
-  var data: [String: Any] = [:]
-  var envetType: WZMessageEventType
-  var messageData: WZMessageData!
+  public var data: [String: Any] = [:]
+  public var envetType: WZMessageEventType
+  public var messageData: WZMessageData!
   
-  init(eventType: WZMessageEventType) {
+  public init(eventType: WZMessageEventType) {
     self.envetType = eventType
   }
 }

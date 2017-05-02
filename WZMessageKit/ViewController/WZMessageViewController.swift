@@ -37,7 +37,7 @@ public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
 //MARK:- WZMessageViewController
 open class WZMessageViewController: UIViewController {
   
-  fileprivate(set) var messageTableView: WZMessageTableView!
+  public var messageTableView: WZMessageTableView!
   fileprivate(set) var messageInputView: WZMessageInputView!
   fileprivate var messageInputViewPopController: WZMessageInputViewPopController!
   fileprivate(set) var bottomViewPoppingController: WZMessageBottomViewPoppingController!
@@ -47,13 +47,13 @@ open class WZMessageViewController: UIViewController {
   fileprivate var isDecelerating = false
   private var preloadedMessageCount = 0
   
-  weak var delegate: WZMessageViewControllerDelegate?
-  weak var dataSource: WZMessageViewControllerDataSource?
+  public weak var delegate: WZMessageViewControllerDelegate?
+  public weak var dataSource: WZMessageViewControllerDataSource?
   
-  var messageContainerCellClass = WZMessageContainerCell.self
-  var backgroundColor: UIColor = UIColor(hex: 0xeeeeee)
+  public var messageContainerCellClass = WZMessageContainerCell.self
+  public var backgroundColor: UIColor = UIColor(hex: 0xeeeeee)
   
-  init() {
+  public init() {
     super.init(nibName: nil, bundle: nil)
     
     WZMessageViewManager.shared.begin()

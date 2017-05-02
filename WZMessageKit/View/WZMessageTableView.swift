@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WZMessageTableView: UITableView {
+public class WZMessageTableView: UITableView {
   
   private(set) var loadingView: MessageLoadingView!
   private let loadingViewHeight: CGFloat = 50
@@ -16,13 +16,13 @@ class WZMessageTableView: UITableView {
   
   var isLoading = false
   
-  init(frame: CGRect) {
+  public init(frame: CGRect) {
     super.init(frame: frame, style: .plain)
     
     setup()
   }
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   

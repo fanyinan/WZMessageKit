@@ -30,7 +30,7 @@ open class WZMessageBaseView: UIControl {
     fatalError("init(coder:) has not been implemented")
   }
   
-  class func getMaxWidth(with messageData: WZMessageData) -> CGFloat {
+  public class func getMaxWidth(with messageData: WZMessageData) -> CGFloat {
     return WZMessageContainerCell.getCustomViewMaxWidth(with: messageData)
   }
   
