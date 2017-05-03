@@ -14,8 +14,6 @@ class WZCacheManager: NSObject {
   
   fileprivate var sizeCache: NSCache<AnyObject, AnyObject>!
   
-  fileprivate var dateCache: NSCache<AnyObject, AnyObject>!
-  
   fileprivate(set) var videoImagesCache: NSCache<AnyObject, AnyObject>!
   
   fileprivate(set) var isContentDiscarded = true
@@ -26,9 +24,6 @@ class WZCacheManager: NSObject {
     
     sizeCache = NSCache()
     sizeCache.countLimit = 500
-    
-    dateCache = NSCache()
-    dateCache.countLimit = 500
     
     videoImagesCache = NSCache()
     videoImagesCache.countLimit = 1000
@@ -55,21 +50,6 @@ class WZCacheManager: NSObject {
     isContentDiscarded = true
     
     return sizeValue.cgSizeValue
-  }
-  
-  func saveDateString(_ dateString: String, date: Date) {
-    dateCache.setObject(dateString as AnyObject, forKey: date.hashValue as AnyObject)
-  }
-  
-  func fetchDateString(_ date: Date) -> String? {
-    
-    guard let dateString = dateCache.object(forKey: date.hashValue as AnyObject) as? String else {
-      
-      return nil
-    }
-    
-    return dateString
-    
   }
   
   func getVideoImages(with videoPathURL: URL) -> [UIImage] {

@@ -46,6 +46,7 @@ open class WZMessageViewController: UIViewController {
   fileprivate var actionsPerformWhenEndScrollingAnimation: [(() -> Void)] = []
   fileprivate var isDecelerating = false
   private var preloadedMessageCount = 0
+  fileprivate var dateStringCache: [Int: String] = [:]
   
   public weak var delegate: WZMessageViewControllerDelegate?
   public weak var dataSource: WZMessageViewControllerDataSource?
@@ -384,7 +385,7 @@ open class WZMessageViewController: UIViewController {
       
       if isDisplayTimestamp {
         let timeString = delegate?.messageViewController?(self, configTimeLabel: messageData.sendTime, atIndex: i) ?? ""
-        WZCacheManager.sharedInstance.saveDateString(timeString, date: messageData.sendTime)
+        dateStringCache[messageData.sendTime.hashValue] = timeString
       }
     }
   }
@@ -445,7 +446,7 @@ extension WZMessageViewController: UITableViewDataSource {
     
     if fetchIsTimestampDisplay(index: row) {
       
-      if let timeString = WZCacheManager.sharedInstance.fetchDateString(messageData.sendTime) {
+      if let timeString = dateStringCache[messageData.sendTime.hashValue] {
         
         cell.setTimeStamp(timeString)
         
@@ -453,7 +454,7 @@ extension WZMessageViewController: UITableViewDataSource {
         
         let timeString = delegate?.messageViewController?(self, configTimeLabel: messageData.sendTime, atIndex: row) ?? ""
         cell.setTimeStamp(timeString)
-        WZCacheManager.sharedInstance.saveDateString(timeString, date: messageData.sendTime)
+        dateStringCache[messageData.sendTime.hashValue] = timeString
       }
     }
     

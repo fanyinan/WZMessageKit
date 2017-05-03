@@ -16,7 +16,7 @@ protocol WZMessageContainerCellDelegate: NSObjectProtocol {
 
 open class WZMessageContainerCell: UITableViewCell {
   
-  private(set) var customContentView: WZMessageBaseView!
+  public var customContentView: WZMessageBaseView!
   private var timestampView: UIView!
   private var messageContainerView: UIView!
   private var avatarButton: UIControl!
