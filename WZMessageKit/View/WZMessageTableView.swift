@@ -35,7 +35,8 @@ public class WZMessageTableView: UITableView {
 
   private func addLoadView() {
     
-    loadingView = Bundle.main.loadNibNamed("MessageLoadingView", owner: self, options: nil)?.last as! MessageLoadingView
+    let nib = UINib(nibName: "MessageLoadingView", bundle: Bundle(for: MessageLoadingView.self))
+    loadingView = nib.instantiate(withOwner: nil, options: nil).first as! MessageLoadingView
     loadingView.frame = CGRect(x: 0, y: -loadingViewHeight, width: frame.width, height: loadingViewHeight)
     loadingView.autoresizingMask = [.flexibleBottomMargin, .flexibleWidth]
     loadingView.backgroundColor = backgroundColor
