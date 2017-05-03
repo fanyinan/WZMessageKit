@@ -10,8 +10,12 @@ import UIKit
 
 public struct WZMessageStatus: Equatable {
 
-  var rawValue = 0
-  static let none = WZMessageStatus(rawValue: 0)
+  public var rawValue = 0
+  public static let none = WZMessageStatus(rawValue: 0)
+  
+  public init(rawValue: Int) {
+    self.rawValue = rawValue
+  }
   
   public static func ==(lhs: WZMessageStatus, rhs: WZMessageStatus) -> Bool {
     return lhs.rawValue == rhs.rawValue
@@ -22,7 +26,7 @@ open class WZMessageStatusView: UIControl {
   
   public var status: WZMessageStatus = .none
   
-  override init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     
     initUI()
