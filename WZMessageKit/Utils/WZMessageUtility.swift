@@ -8,20 +8,6 @@
 
 import Foundation
 
-func exChangeGlobalQueue(_ handle: @escaping ()->Void) {
-  
-  DispatchQueue.global().async {
-    handle()
-  }
-}
-
-func exChangeMainQueue(_ handle: @escaping ()->Void) {
-  
-  DispatchQueue.main.async {
-    handle()
-  }
-}
-
 func swiftClassFromString(_ className: String) -> AnyClass? {
   // get the project name NSClassFromString 在Swift中已经 no effect
   if let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String {

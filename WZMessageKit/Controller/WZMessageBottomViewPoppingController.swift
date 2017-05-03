@@ -55,15 +55,16 @@ class WZMessageBottomViewPoppingController: NSObject {
     
     superView.bringSubview(toFront: view)
     poppingView = view
-    animateBottomViewWith(poppingView: view, isShow: true)
+    animateBottomView(poppingView: view, isShow: true)
   }
   
-  func hidePoppingView(_ isNotice: Bool = true) {
+  //isNotice : 是否通知delegate弹出框位置发生变化
+  func hidePoppingView(isNoticeDelegate: Bool = true) {
     
     guard let poppingView = poppingView else { return }
     
     self.poppingView = nil
-    animateBottomViewWith(poppingView: poppingView, isShow: false, isNotice: isNotice)
+    animateBottomView(poppingView: poppingView, isShow: false, isNoticeDelegate: isNoticeDelegate)
     
   }
   
@@ -88,7 +89,7 @@ class WZMessageBottomViewPoppingController: NSObject {
    ******************************************************************************/
   //MARK: - private method
   
-  fileprivate func initPoppingViewPosition(_ view: UIView) {
+  private func initPoppingViewPosition(_ view: UIView) {
     
     //只改变view的Y坐标，把view放在下方
     var viewFrame = view.frame
@@ -97,12 +98,12 @@ class WZMessageBottomViewPoppingController: NSObject {
     
   }
   
-  fileprivate func animateBottomViewWith(poppingView: UIView, isShow: Bool, isNotice: Bool = true) {
+  private func animateBottomView(poppingView: UIView, isShow: Bool, isNoticeDelegate: Bool = true) {
     
     var poppingFrame = poppingView.frame
     poppingFrame.origin.y = isShow == true ? superView.frame.height - poppingFrame.height : superView.frame.height
     
-    if isNotice {
+    if isNoticeDelegate {
       delegate?.poppingBottomViewWillChange(poppingFrame, animationDuration: popAnimationDuration, animationOptions: popAnimationOptions, isShow: isShow)
     }
     

@@ -38,9 +38,9 @@ public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
 open class WZMessageViewController: UIViewController {
   
   public var messageTableView: WZMessageTableView!
-  fileprivate(set) var messageInputView: WZMessageInputView!
+  public var messageInputView: WZMessageInputView!
+  fileprivate var bottomViewPoppingController: WZMessageBottomViewPoppingController!
   fileprivate var messageInputViewPopController: WZMessageInputViewPopController!
-  fileprivate(set) var bottomViewPoppingController: WZMessageBottomViewPoppingController!
   fileprivate var timestampDisplayCache: [Int: Bool] = [:]
   fileprivate var canLoadData = true //用于标记是否在一次拖动中已经加载过数据，防止一次拖动多次加载
   fileprivate var actionsPerformWhenEndScrollingAnimation: [(() -> Void)] = []
@@ -146,30 +146,20 @@ open class WZMessageViewController: UIViewController {
     
     initPoppingBottomView()
   }
-
-  public func addPoppingView(_ view: UIView) {
-    
-    bottomViewPoppingController.addPoppingView(view)
-    
-  }
-  
-  public func togglePoppingView(_ view: UIView) {
-    bottomViewPoppingController.toggleView(view)
-  }
   
   public func finishLoadMoreMessages() {
     
-    exChangeGlobalQueue {
+    DispatchQueue.global().async {
       
       self.preloadMessageData()
       
       Thread.sleep(forTimeInterval: 0.1)
       
-      exChangeMainQueue({
+      DispatchQueue.main.async {
         
         self.updateUIWhenFinishLoadMoreMessage()
         
-      })
+      }
     }
   }
   
@@ -178,6 +168,22 @@ open class WZMessageViewController: UIViewController {
     if let cell = messageTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? WZMessageContainerCell {
       cell.setMessageStatus(status)
     }
+  }
+  
+  public func addPoppingView(_ view: UIView) {
+    bottomViewPoppingController.addPoppingView(view)
+  }
+  
+  public func togglePoppingView(_ view: UIView) {
+    bottomViewPoppingController.toggleView(view)
+  }
+  
+  public func hidePoppingView(isNoticeDelegate: Bool) {
+    bottomViewPoppingController.hidePoppingView(isNoticeDelegate: isNoticeDelegate)
+  }
+  
+  public func showKeyboard() {
+    messageInputView.showKeyboard()
   }
   
   public func hideKeyboard() {

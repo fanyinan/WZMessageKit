@@ -26,14 +26,14 @@ public class WZMessageTableView: UITableView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setup() {
+  private func setup() {
     
     autoresizingMask = [.flexibleHeight, .flexibleWidth]
     separatorStyle = .none
     addLoadView()
   }
 
-  func addLoadView() {
+  private func addLoadView() {
     
     loadingView = Bundle.main.loadNibNamed("MessageLoadingView", owner: self, options: nil)?.last as! MessageLoadingView
     loadingView.frame = CGRect(x: 0, y: -loadingViewHeight, width: frame.width, height: loadingViewHeight)
@@ -63,7 +63,7 @@ public class WZMessageTableView: UITableView {
     isLoading = false
   }
   
-  func changeTableViewInsets(topIncrement: CGFloat? = nil, bottomIncrement: CGFloat? = nil, adjustIndicator: Bool = true) {
+  public func changeTableViewInsets(topIncrement: CGFloat? = nil, bottomIncrement: CGFloat? = nil, adjustIndicator: Bool = true) {
     
     recentChangeContentInsets = UIEdgeInsets(top: topIncrement ?? 0, left: 0, bottom: bottomIncrement ?? 0, right: 0)
     
@@ -78,7 +78,7 @@ public class WZMessageTableView: UITableView {
     }
   }
   
-  func setTableViewInsets(top: CGFloat? = nil, bottom: CGFloat? = nil, adjustIndicator: Bool = true) {
+  public func setTableViewInsets(top: CGFloat? = nil, bottom: CGFloat? = nil, adjustIndicator: Bool = true) {
     
     if let top = top {
       
