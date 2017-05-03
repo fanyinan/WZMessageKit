@@ -17,11 +17,11 @@ protocol WZMessageContainerCellDelegate: NSObjectProtocol {
 open class WZMessageContainerCell: UITableViewCell {
   
   public var customContentView: WZMessageBaseView!
-  private var timestampView: UIView!
+  private var timeView: UIView!
   private var messageContainerView: UIView!
   private var avatarButton: UIControl!
   private(set) var avatarImageView: UIImageView!
-  private(set) var timestampLabel: UILabel!
+  private(set) var timeLabel: UILabel!
   private(set) var statusView: WZMessageStatusView!
   private var contentViewType: WZMessageBaseView.Type!
   
@@ -37,13 +37,13 @@ open class WZMessageContainerCell: UITableViewCell {
     }
   }
   
-  open static let timestampViewHeight: CGFloat = 40
+  open static let timeViewHeight: CGFloat = 40
   open static let contentMargin: CGFloat = 10
   open static let avatarSideLength: CGFloat = 45
   open static let statusViewMargin: CGFloat = 5
   
   fileprivate(set) var messageData: WZMessageData!
-  fileprivate(set) var isDisplayTimestamp: Bool = true
+  fileprivate(set) var isDisplayTime: Bool = true
   
   fileprivate weak var delegate: WZMessageContainerCellDelegate?
   
@@ -63,7 +63,7 @@ open class WZMessageContainerCell: UITableViewCell {
     
     guard messageData != nil else { return }
     
-    configTimestamp()
+    configTime()
     layoutMessageContainerView()
     configAvatarWithMessage()
     configCustomContentView()
@@ -71,18 +71,18 @@ open class WZMessageContainerCell: UITableViewCell {
     
   }
   
-  public func configureCell(messageData: WZMessageData, isDisplayTimestamp: Bool) {
+  public func configureCell(messageData: WZMessageData, isDisplayTime: Bool) {
     
     self.messageData = messageData
-    self.isDisplayTimestamp = isDisplayTimestamp
+    self.isDisplayTime = isDisplayTime
     
     delegate = messageViewController as WZMessageContainerCellDelegate
   }
   
   public func setTimeStamp(_ timeString: String) {
     
-    guard timestampLabel.text != timeString else { return }
-    timestampLabel.text = timeString
+    guard timeLabel.text != timeString else { return }
+    timeLabel.text = timeString
   }
   
   public func setMessageStatus(_ status: WZMessageStatus) {
@@ -108,16 +108,16 @@ open class WZMessageContainerCell: UITableViewCell {
     customContentView.messageViewWillDisplay()
   }
   
-  public class func calculateMessageCellHeightWith(messageData: WZMessageData, isDisplayTimestamp: Bool) -> CGFloat {
+  public class func calculateMessageCellHeightWith(messageData: WZMessageData, isDisplayTime: Bool) -> CGFloat {
     
-    return calculateMessageCellHeightWith(messageData: messageData, customContentViewHeight: calculateMessageCustomContentView(with: messageData).height, isDisplayTimestamp: isDisplayTimestamp)
+    return calculateMessageCellHeightWith(messageData: messageData, customContentViewHeight: calculateMessageCustomContentView(with: messageData).height, isDisplayTime: isDisplayTime)
   }
   
-  public class func preloadData(messageData: WZMessageData, isDisplayTimestamp: Bool, tableViewHeight: CGFloat) {
+  public class func preloadData(messageData: WZMessageData, isDisplayTime: Bool, tableViewHeight: CGFloat) {
     
     messageData.mappingMessageView.preloadData(with: messageData)
     
-    let cellHeight = calculateMessageCellHeightWith(messageData: messageData, isDisplayTimestamp: isDisplayTimestamp)
+    let cellHeight = calculateMessageCellHeightWith(messageData: messageData, isDisplayTime: isDisplayTime)
     WZMessageViewManager.shared.preload(with: messageData.mappingMessageView, with: cellHeight, maxHeight: tableViewHeight)
   }
   
@@ -143,15 +143,15 @@ open class WZMessageContainerCell: UITableViewCell {
     delegate?.messageContainerCell(self, didClickAvatarImageView: avatarImageView)
   }
   
-  open func createTimestampLabel() -> UILabel {
+  open func createTimeLabel() -> UILabel {
     
-    let timestampLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 18))
-    timestampLabel.textColor = .subText
-    timestampLabel.font = UIFont.systemFont(ofSize: 12)
-    timestampLabel.backgroundColor = UIColor(hex: 0xeeeeee)
-    timestampLabel.textAlignment = .center
+    let timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 18))
+    timeLabel.textColor = .subText
+    timeLabel.font = UIFont.systemFont(ofSize: 12)
+    timeLabel.backgroundColor = UIColor(hex: 0xeeeeee)
+    timeLabel.textAlignment = .center
     
-    return timestampLabel
+    return timeLabel
   }
   
   open func createStatusView() -> WZMessageStatusView {
@@ -169,13 +169,15 @@ open class WZMessageContainerCell: UITableViewCell {
     return avatarImageView
   }
   
-  open func configTimestamp() {
+  open func configTime() {
     
-    timestampView.isHidden = !isDisplayTimestamp
+    timeView.isHidden = !isDisplayTime
     
-    let height = isDisplayTimestamp == true ? WZMessageContainerCell.timestampViewHeight : 0
-    timestampView.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: height)
+    let height = isDisplayTime == true ? WZMessageContainerCell.timeViewHeight : 0
+    timeView.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: height)
  
+    timeLabel.frame = timeView.bounds
+
   }
   
   open func configAvatarWithMessage() {
@@ -253,15 +255,15 @@ open class WZMessageContainerCell: UITableViewCell {
     initContainerView()
     initAvatar()
     initCustomView()
-    initTimestampLabel()
+    initTimeLabel()
     initStatusView()
     
   }
   
   private func initContainerView() {
     
-    timestampView = UIView()
-    contentView.addSubview(timestampView)
+    timeView = UIView()
+    contentView.addSubview(timeView)
     
     messageContainerView = UIView()
     contentView.addSubview(messageContainerView)
@@ -288,36 +290,36 @@ open class WZMessageContainerCell: UITableViewCell {
     
   }
   
-  private func initTimestampLabel() {
+  private func initTimeLabel() {
     
-    timestampLabel = createTimestampLabel()
-    timestampView.addSubview(timestampLabel)
-    timestampLabel.center = timestampView.center
+    timeLabel = createTimeLabel()
+    timeView.addSubview(timeLabel)
+    timeLabel.center = timeView.center
     
   }
   
   private func layoutMessageContainerView() {
     
-    let frame = CGRect(x: 0, y: timestampView.frame.maxY, width: contentView.frame.width, height: contentView.frame.height - timestampView.frame.height)
+    let frame = CGRect(x: 0, y: timeView.frame.maxY, width: contentView.frame.width, height: contentView.frame.height - timeView.frame.height)
     messageContainerView.frame = frame
 
   }
   
-  private class func getCellEdgesHeightWithMessage(isDisplayTimestamp: Bool) -> CGFloat {
+  private class func getCellEdgesHeightWithMessage(isDisplayTime: Bool) -> CGFloat {
     
     var cellEdgesHeight = contentMargin * 2
     
-    if isDisplayTimestamp {
-      cellEdgesHeight += timestampViewHeight
+    if isDisplayTime {
+      cellEdgesHeight += timeViewHeight
     }
     
     return cellEdgesHeight
   }
   
-  fileprivate class func calculateMessageCellHeightWith(messageData: WZMessageData, customContentViewHeight: CGFloat, isDisplayTimestamp: Bool) -> CGFloat {
+  fileprivate class func calculateMessageCellHeightWith(messageData: WZMessageData, customContentViewHeight: CGFloat, isDisplayTime: Bool) -> CGFloat {
     
     //当消息类型不为custom时，customContentViewHeight和avatarSideLength中去较大的
-    let cellHeight = max(messageData.ownerType == .custom ? 0 : WZMessageContainerCell.avatarSideLength, customContentViewHeight) + getCellEdgesHeightWithMessage(isDisplayTimestamp: isDisplayTimestamp) + 0.5
+    let cellHeight = max(messageData.ownerType == .custom ? 0 : WZMessageContainerCell.avatarSideLength, customContentViewHeight) + getCellEdgesHeightWithMessage(isDisplayTime: isDisplayTime) + 0.5
     
     return cellHeight
   }

@@ -40,7 +40,6 @@
 		CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2FA9911EB8BAE800E5DE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF2FA9931EB8BAE800E5DE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF2FA9E41EB8BEA800E5DE67 /* WZMessageKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WZMessageKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF2FAA831EB8D14300E5DE67 /* WZMessageContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageContainerCell.swift; sourceTree = "<group>"; };
 		CF2FAA851EB8D14300E5DE67 /* WZMessageBottomViewPoppingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBottomViewPoppingController.swift; sourceTree = "<group>"; };
 		CF2FAA861EB8D14300E5DE67 /* WZMessageInputViewPopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputViewPopController.swift; sourceTree = "<group>"; };
@@ -97,7 +96,6 @@
 				CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */,
 				CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */,
 				CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */,
-				CF2FA9E41EB8BEA800E5DE67 /* WZMessageKitDemo-Bridging-Header.h */,
 				CF2FA9931EB8BAE800E5DE67 /* Info.plist */,
 			);
 			path = WZMessageKitDemo;
@@ -405,7 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -419,7 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

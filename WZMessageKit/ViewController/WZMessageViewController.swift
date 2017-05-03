@@ -213,7 +213,7 @@ open class WZMessageViewController: UIViewController {
     
     guard let messageData = fetchMessageData(at: index) else { return }
     
-    cell.configureCell(messageData: messageData, isDisplayTimestamp: fetchIsTimestampDisplay(index: index))
+    cell.configureCell(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: index))
     
   }
   
@@ -381,7 +381,7 @@ open class WZMessageViewController: UIViewController {
       guard let messageData = fetchMessageData(at: i) else { continue }
       
       let isDisplayTimestamp = fetchIsTimestampDisplay(index: i)
-      WZMessageContainerCell.preloadData(messageData: messageData, isDisplayTimestamp: isDisplayTimestamp, tableViewHeight: messageTableView.frame.height)
+      WZMessageContainerCell.preloadData(messageData: messageData, isDisplayTime: isDisplayTimestamp, tableViewHeight: messageTableView.frame.height)
       
       if isDisplayTimestamp {
         let timeString = delegate?.messageViewController?(self, configTimeLabel: messageData.sendTime, atIndex: i) ?? ""
@@ -460,7 +460,7 @@ extension WZMessageViewController: UITableViewDataSource {
     
     delegate?.messageViewController?(self, configAvatarImageView: cell.avatarImageView, atIndex: row)
     
-    cell.configureCell(messageData: messageData, isDisplayTimestamp: fetchIsTimestampDisplay(index: row))
+    cell.configureCell(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: row))
     
     return cell
     
@@ -478,7 +478,7 @@ extension WZMessageViewController: UITableViewDelegate {
       return 1
     }
     
-    return WZMessageContainerCell.calculateMessageCellHeightWith(messageData: messageData, isDisplayTimestamp: fetchIsTimestampDisplay(index: row))
+    return WZMessageContainerCell.calculateMessageCellHeightWith(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: row))
   }
   
   public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
