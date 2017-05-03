@@ -196,7 +196,7 @@ open class WZMessageViewController: UIViewController {
     messageInputView.hideKeyboard()
   }
   
-  func setInputViewHidden(_ hidden: Bool, isAdjustBottomInset: Bool = true ) {
+  public func setInputViewHidden(_ hidden: Bool, isAdjustBottomInset: Bool = true ) {
     
     guard messageInputView.isHidden != hidden else { return }
     
