@@ -46,7 +46,7 @@ open class WZMessageContainerCell: UITableViewCell {
   
   fileprivate weak var delegate: WZMessageContainerCellDelegate?
   
-  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+  override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     
     contentViewType = WZMessageViewManager.shared.messageViewType(typeIdentifier: reuseIdentifier!)
