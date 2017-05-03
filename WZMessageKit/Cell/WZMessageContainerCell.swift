@@ -39,7 +39,8 @@ open class WZMessageContainerCell: UITableViewCell {
   
   open static let timestampViewHeight: CGFloat = 40
   open static let contentMargin: CGFloat = 10
-  open static let avatarSize: CGFloat = 45
+  open static let avatarSideLength: CGFloat = 45
+  open static let statusViewMargin: CGFloat = 5
   
   fileprivate(set) var messageData: WZMessageData!
   fileprivate(set) var isDisplayTimestamp: Bool = true
@@ -128,7 +129,7 @@ open class WZMessageContainerCell: UITableViewCell {
       
     } else {
       
-      return UIScreen.main.bounds.width - contentMargin * 2 - avatarSize
+      return UIScreen.main.bounds.width - contentMargin * 2 - avatarSideLength
       
     }
   }
@@ -172,10 +173,9 @@ open class WZMessageContainerCell: UITableViewCell {
     
     timestampView.isHidden = !isDisplayTimestamp
     
-    timestampView.po_frameBuilder().alignToTopInSuperview(withInset: 0)
-    timestampView.po_frameBuilder().setWidth(contentView.frame.width)
-    timestampView.po_frameBuilder().alignLeftInSuperview(withInset: 0)
-    timestampView.po_frameBuilder().setHeight(isDisplayTimestamp == true ? WZMessageContainerCell.timestampViewHeight : 0)
+    let height = isDisplayTimestamp == true ? WZMessageContainerCell.timestampViewHeight : 0
+    timestampView.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: height)
+ 
   }
   
   open func configAvatarWithMessage() {
@@ -184,35 +184,33 @@ open class WZMessageContainerCell: UITableViewCell {
     
     guard !avatarButton.isHidden else { return }
     
-    avatarButton.po_frameBuilder().alignToTopInSuperview(withInset: 0)
-    avatarButton.po_frameBuilder().setSizeWithWidth(WZMessageContainerCell.avatarSize, height: WZMessageContainerCell.avatarSize)
+    avatarButton.frame.size = CGSize(width: WZMessageContainerCell.avatarSideLength, height: WZMessageContainerCell.avatarSideLength)
     if messageData.ownerType == .sender {
-      avatarButton.po_frameBuilder().alignRightInSuperview(withInset: WZMessageContainerCell.contentMargin)
+      avatarButton.frame.origin.x = messageContainerView.frame.width - WZMessageContainerCell.contentMargin - WZMessageContainerCell.avatarSideLength
     } else if messageData.ownerType == .receiver{
-      avatarButton.po_frameBuilder().alignLeftInSuperview(withInset: WZMessageContainerCell.contentMargin)
+      avatarButton.frame.origin.x = WZMessageContainerCell.contentMargin
     }
-    
   }
   
   open func configCustomContentView() {
     
-    customContentView.po_frameBuilder().alignToTopInSuperview(withInset: 0)
-    customContentView.po_frameBuilder().setSize(type(of: self).calculateMessageCustomContentView(with: messageData))
+    customContentView.frame.size = type(of: self).calculateMessageCustomContentView(with: messageData)
     
     if messageData.ownerType != .custom {
       
       if messageData.ownerType == .sender {
-        //        customContentView.po_frameBuilder().alignRightInSuperviewWithInset(WZMessageContainerCell.contentMargin)
         
-        customContentView.po_frameBuilder().alignLeft(of: avatarButton, offset: WZMessageContainerCell.contentMargin)
+        customContentView.frame.origin.x = avatarButton.frame.minX - WZMessageContainerCell.contentMargin - customContentView.frame.width
         
       } else if messageData.ownerType == .receiver{
-        customContentView.po_frameBuilder().alignRight(of: avatarButton, offset: WZMessageContainerCell.contentMargin)
+        
+        customContentView.frame.origin.x = avatarButton.frame.maxX + WZMessageContainerCell.contentMargin
+        
       }
       
     } else {
       
-      customContentView.po_frameBuilder().alignLeftInSuperview(withInset: WZMessageContainerCell.contentMargin)
+      customContentView.center.x = messageContainerView.frame.midX
       
     }
     
@@ -230,9 +228,9 @@ open class WZMessageContainerCell: UITableViewCell {
     }
     
     if messageData.ownerType == .sender {
-      statusView.po_frameBuilder().alignLeft(of: customContentView, offset: 5)
+      statusView.frame.origin.x = customContentView.frame.minX - WZMessageContainerCell.statusViewMargin - statusView.frame.width
     } else {
-      statusView.po_frameBuilder().alignRight(of: customContentView, offset: 5)
+      statusView.frame.origin.x = customContentView.frame.maxX + WZMessageContainerCell.statusViewMargin
     }
     
     statusView.center.y = customContentView.frame.height / 2
@@ -300,11 +298,9 @@ open class WZMessageContainerCell: UITableViewCell {
   
   private func layoutMessageContainerView() {
     
-    messageContainerView.po_frameBuilder().align(toBottomOf: timestampView, offset: 0)
-    messageContainerView.po_frameBuilder().setHeight(contentView.frame.height - timestampView.frame.height)
-    messageContainerView.po_frameBuilder().setWidth(contentView.frame.width)
-    messageContainerView.po_frameBuilder().alignLeftInSuperview(withInset: 0)
-    
+    let frame = CGRect(x: 0, y: timestampView.frame.maxY, width: contentView.frame.width, height: contentView.frame.height - timestampView.frame.height)
+    messageContainerView.frame = frame
+
   }
   
   private class func getCellEdgesHeightWithMessage(isDisplayTimestamp: Bool) -> CGFloat {
@@ -320,8 +316,8 @@ open class WZMessageContainerCell: UITableViewCell {
   
   fileprivate class func calculateMessageCellHeightWith(messageData: WZMessageData, customContentViewHeight: CGFloat, isDisplayTimestamp: Bool) -> CGFloat {
     
-    //当消息类型不为custom时，customContentViewHeight和avatarSize中去较大的
-    let cellHeight = max(messageData.ownerType == .custom ? 0 : WZMessageContainerCell.avatarSize, customContentViewHeight) + getCellEdgesHeightWithMessage(isDisplayTimestamp: isDisplayTimestamp) + 0.5
+    //当消息类型不为custom时，customContentViewHeight和avatarSideLength中去较大的
+    let cellHeight = max(messageData.ownerType == .custom ? 0 : WZMessageContainerCell.avatarSideLength, customContentViewHeight) + getCellEdgesHeightWithMessage(isDisplayTimestamp: isDisplayTimestamp) + 0.5
     
     return cellHeight
   }

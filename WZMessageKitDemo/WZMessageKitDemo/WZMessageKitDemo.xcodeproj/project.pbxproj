@@ -23,8 +23,6 @@
 		CF2FAAAB1EB8D14400E5DE67 /* KeyBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA8F1EB8D14400E5DE67 /* KeyBoardController.swift */; };
 		CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA901EB8D14400E5DE67 /* UIColor+extension.swift */; };
 		CF2FAAAE1EB8D14400E5DE67 /* WZMessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA921EB8D14400E5DE67 /* WZMessageUtility.swift */; };
-		CF2FAAAF1EB8D14400E5DE67 /* POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA971EB8D14400E5DE67 /* POViewFrameBuilder.m */; };
-		CF2FAAB01EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA991EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m */; };
 		CF2FAAB11EB8D14400E5DE67 /* MessageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9B1EB8D14400E5DE67 /* MessageLoadingView.swift */; };
 		CF2FAAB21EB8D14400E5DE67 /* MessageLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2FAA9C1EB8D14400E5DE67 /* MessageLoadingView.xib */; };
 		CF2FAAB31EB8D14400E5DE67 /* WZMessageBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9D1EB8D14400E5DE67 /* WZMessageBaseView.swift */; };
@@ -54,11 +52,6 @@
 		CF2FAA8F1EB8D14400E5DE67 /* KeyBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardController.swift; sourceTree = "<group>"; };
 		CF2FAA901EB8D14400E5DE67 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		CF2FAA921EB8D14400E5DE67 /* WZMessageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageUtility.swift; sourceTree = "<group>"; };
-		CF2FAA951EB8D14400E5DE67 /* POGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POGeometry.h; sourceTree = "<group>"; };
-		CF2FAA961EB8D14400E5DE67 /* POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POViewFrameBuilder.h; sourceTree = "<group>"; };
-		CF2FAA971EB8D14400E5DE67 /* POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POViewFrameBuilder.m; sourceTree = "<group>"; };
-		CF2FAA981EB8D14400E5DE67 /* UIView+POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+POViewFrameBuilder.h"; sourceTree = "<group>"; };
-		CF2FAA991EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+POViewFrameBuilder.m"; sourceTree = "<group>"; };
 		CF2FAA9B1EB8D14400E5DE67 /* MessageLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLoadingView.swift; sourceTree = "<group>"; };
 		CF2FAA9C1EB8D14400E5DE67 /* MessageLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageLoadingView.xib; sourceTree = "<group>"; };
 		CF2FAA9D1EB8D14400E5DE67 /* WZMessageBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageBaseView.swift; sourceTree = "<group>"; };
@@ -118,7 +111,6 @@
 				CF2FAA871EB8D14400E5DE67 /* Manager */,
 				CF2FAA8A1EB8D14400E5DE67 /* Model */,
 				CF2FAA8D1EB8D14400E5DE67 /* Utils */,
-				CF2FAA931EB8D14400E5DE67 /* Vendor */,
 				CF2FAA9A1EB8D14400E5DE67 /* View */,
 				CF2FAAA11EB8D14400E5DE67 /* ViewController */,
 			);
@@ -170,26 +162,6 @@
 				CF2FAA921EB8D14400E5DE67 /* WZMessageUtility.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		CF2FAA931EB8D14400E5DE67 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				CF2FAA941EB8D14400E5DE67 /* POViewFrameBuilder */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		CF2FAA941EB8D14400E5DE67 /* POViewFrameBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				CF2FAA951EB8D14400E5DE67 /* POGeometry.h */,
-				CF2FAA961EB8D14400E5DE67 /* POViewFrameBuilder.h */,
-				CF2FAA971EB8D14400E5DE67 /* POViewFrameBuilder.m */,
-				CF2FAA981EB8D14400E5DE67 /* UIView+POViewFrameBuilder.h */,
-				CF2FAA991EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m */,
-			);
-			path = POViewFrameBuilder;
 			sourceTree = "<group>";
 		};
 		CF2FAA9A1EB8D14400E5DE67 /* View */ = {
@@ -296,10 +268,8 @@
 				CF2FAAB31EB8D14400E5DE67 /* WZMessageBaseView.swift in Sources */,
 				CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */,
 				CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */,
-				CF2FAAB01EB8D14400E5DE67 /* UIView+POViewFrameBuilder.m in Sources */,
 				CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */,
 				CF2FAAA71EB8D14400E5DE67 /* WZMessageViewManager.swift in Sources */,
-				CF2FAAAF1EB8D14400E5DE67 /* POViewFrameBuilder.m in Sources */,
 				CF2FAAAA1EB8D14400E5DE67 /* DictArray.swift in Sources */,
 				CF2FAAB51EB8D14400E5DE67 /* WZMessageStatusView.swift in Sources */,
 				CF2FAAA31EB8D14400E5DE67 /* WZMessageContainerCell.swift in Sources */,
