@@ -23,6 +23,7 @@ public class WZMessageTableView: UITableView {
   }
   
   public override func layoutSubviews() {
+    super.layoutSubviews()
     loadingView.backgroundColor = backgroundColor
   }
   
