@@ -39,7 +39,7 @@ open class WZMessageViewController: UIViewController {
   
   public var messageTableView: WZMessageTableView!
   public var messageInputView: WZMessageInputView!
-  fileprivate var bottomViewPoppingController: WZMessageBottomViewPoppingController!
+  public var bottomViewPoppingController: WZMessageBottomViewPoppingController!
   fileprivate var messageInputViewPopController: WZMessageInputViewPopController!
   fileprivate var timestampDisplayCache: [Int: Bool] = [:]
   fileprivate var canLoadData = true //用于标记是否在一次拖动中已经加载过数据，防止一次拖动多次加载
@@ -114,10 +114,13 @@ open class WZMessageViewController: UIViewController {
     
   }
   
-  public func appendMessages() {
+  public func appendMessages(isScrollToBottom: Bool = true) {
     
     messageTableView.reloadData()
-    scrollToBottomAnimated(isAnimated: true)
+    
+    if isScrollToBottom {
+      scrollToBottomAnimated(isAnimated: true)
+    }
     
   }
   

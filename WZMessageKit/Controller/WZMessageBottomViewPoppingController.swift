@@ -12,11 +12,11 @@ protocol WZMessageBottomViewPoppingControllerDelegate: NSObjectProtocol {
   func poppingBottomViewWillChange(_ viewFrame: CGRect, animationDuration: Double, animationOptions: UIViewAnimationOptions, isShow: Bool)
 }
 
-class WZMessageBottomViewPoppingController: NSObject {
+public class WZMessageBottomViewPoppingController: NSObject {
   
+  public var poppingView: UIView?
   private var superView: UIView
   private var popViews: [UIView] = []
-  private var poppingView: UIView?
   
   weak var delegate: WZMessageBottomViewPoppingControllerDelegate?
   
