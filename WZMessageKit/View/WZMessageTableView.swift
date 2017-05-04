@@ -22,6 +22,10 @@ public class WZMessageTableView: UITableView {
     setup()
   }
   
+  public override func layoutSubviews() {
+    loadingView.backgroundColor = backgroundColor
+  }
+  
   required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -39,7 +43,6 @@ public class WZMessageTableView: UITableView {
     loadingView = nib.instantiate(withOwner: nil, options: nil).first as! MessageLoadingView
     loadingView.frame = CGRect(x: 0, y: -loadingViewHeight, width: frame.width, height: loadingViewHeight)
     loadingView.autoresizingMask = [.flexibleBottomMargin, .flexibleWidth]
-    loadingView.backgroundColor = backgroundColor
     loadingView.isHidden = true
     
     addSubview(loadingView)
