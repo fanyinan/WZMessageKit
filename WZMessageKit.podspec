@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://iOSdefault:123456@test.game.xiaoyouapp.cn:20080/iOS/JXMessageKit.git", :tag => "#{s.version}" }
+  s.source       = { :git => "http://iOSdefault:123456@test.game.xiaoyouapp.cn:20080/iOS/JXMessageKit.git", :tag => "master" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

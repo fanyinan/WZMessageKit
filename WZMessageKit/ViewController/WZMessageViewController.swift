@@ -18,15 +18,11 @@ public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
 @objc public protocol WZMessageViewControllerDelegate: NSObjectProtocol {
   
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, shouldDisplayTimestampAt index: Int) -> Bool
-  @objc optional func messageViewController(_ messageViewController: WZMessageViewController, didClickSendButton text: String)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, configAvatarImageView avatarImageView: UIImageView, atIndex index: Int)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, configTimeLabel date: Date, atIndex index: Int) -> String
   @objc optional func messageViewControllerWillLoadMoreMessages(_ messageViewController: WZMessageViewController) -> Bool
   @objc optional func messageViewControllerDidLoadMoreMessages(_ messageViewController: WZMessageViewController)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, didClickAvatarImageView avatarImageView: UIImageView, atIndex index: Int)
-  @objc optional func messageViewController(_ messageViewController: WZMessageViewController, didClickAudioViewAt index: Int)
-  @objc optional func recordAudioShouldBegin(_ messageViewController: WZMessageViewController) -> Bool
-  @objc optional func messageViewController(_ messageViewController: WZMessageViewController, recordAudioDidFinish audioData: Data, duration: TimeInterval)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, didClickStatusView messageData: WZMessageData)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, messageContentView: WZMessageBaseView, onCatchEvent messageEvent: WZMessageEvent, atIndex index: Int)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, willDisplay messageData: WZMessageData)
