@@ -43,7 +43,8 @@ open class WZMessageViewController: UIViewController {
   fileprivate var isDecelerating = false
   private var preloadedMessageCount = 0
   fileprivate var dateStringCache: [Int: String] = [:]
-  
+  private var isPreloadedAtFirst = false
+
   public weak var delegate: WZMessageViewControllerDelegate?
   public weak var dataSource: WZMessageViewControllerDataSource?
   
@@ -72,7 +73,10 @@ open class WZMessageViewController: UIViewController {
     super.viewDidLayoutSubviews()
     
     //放在viewDidLayoutSubviews中可以获得tableview的实际尺寸
-    preloadMessageData()
+    if !isPreloadedAtFirst {
+      isPreloadedAtFirst = true
+      preloadMessageData()
+    }
     
     //保证首次预加载完成之后再加载tableview的数据
     if messageTableView.dataSource == nil || messageTableView.delegate == nil {
