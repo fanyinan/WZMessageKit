@@ -566,10 +566,10 @@ extension WZMessageViewController: WZMessageInputViewPopControllerDelegate {
     let offsetLength = currentFrame.maxY - originFrame.maxY
     messageTableView.frame.origin.y = currentFrame.maxY - messageTableView.frame.height
     messageTableView.changeTableViewInsets(topIncrement: -offsetLength)
+//    不这么写是因为当tableView的高度变化的时候，contentOffset并不会改变，导致tableView的cell并不会被抬高
+//    messageTableView.frame.size.height = currentFrame.maxY
     
-    //    不这么写是因为当tableView的高度变化的时候，contentOffset并不会改变，导致tableView的cell并不会被抬高
-    //    messageTableView.frame.size.height = currentFrame.maxY
-    
+    delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: currentFrame)
     
   }
 }
