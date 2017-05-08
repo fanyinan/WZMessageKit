@@ -100,6 +100,7 @@ open class WZMessageViewController: UIViewController {
   
   deinit {
     WZMessageViewManager.shared.end()
+    messageInputView?.removeObserver(self, forKeyPath: "frame")
   }
   
   /******************************************************************************
@@ -147,6 +148,7 @@ open class WZMessageViewController: UIViewController {
     //管理messageInputView的弹出
     messageInputViewPopController = WZMessageInputViewPopController(delegate: self, inputView: inputView)
     messageInputView = inputView
+    messageInputView.addObserver(self, forKeyPath: "frame", options: [.new], context: nil)
     
     initPoppingBottomView()
   }
@@ -252,6 +254,13 @@ open class WZMessageViewController: UIViewController {
     }
     
     return messageBaseView
+  }
+  
+  open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    
+    guard let newFrame = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.cgRectValue else { return }
+    
+    print(newFrame)
   }
   
   /******************************************************************************
