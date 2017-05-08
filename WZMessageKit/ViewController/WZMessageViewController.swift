@@ -89,8 +89,8 @@ open class WZMessageViewController: UIViewController {
       
     }
 
-    if let inputView = inputView {
-      delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: inputView.frame)
+    if let messageInputView = messageInputView {
+      delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: messageInputView.frame)
     }
 
   }
