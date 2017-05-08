@@ -88,7 +88,11 @@ open class WZMessageViewController: UIViewController {
       scrollToBottomAnimated(isAnimated: false)
       
     }
-    
+
+    if let inputView = inputView {
+      delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: inputView.frame)
+    }
+
   }
   
   override open func viewDidAppear(_ animated: Bool) {
