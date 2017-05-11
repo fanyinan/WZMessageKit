@@ -27,7 +27,7 @@ public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, messageContentView: WZMessageBaseView, onCatchEvent messageEvent: WZMessageEvent, atIndex index: Int)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, willDisplay messageData: WZMessageData)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, inputViewFrameChangeWithAnimation inputViewFrame: CGRect)
-
+  
 }
 
 //MARK:- WZMessageViewController
@@ -44,7 +44,7 @@ open class WZMessageViewController: UIViewController {
   private var preloadedMessageCount = 0
   fileprivate var dateStringCache: [Int: String] = [:]
   private var isPreloadedAtFirst = false
-
+  
   public weak var delegate: WZMessageViewControllerDelegate?
   public weak var dataSource: WZMessageViewControllerDataSource?
   
@@ -88,11 +88,11 @@ open class WZMessageViewController: UIViewController {
       scrollToBottomAnimated(isAnimated: false)
       
     }
-
+    
     if let messageInputView = messageInputView {
       delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: messageInputView.frame)
     }
-
+    
   }
   
   override open func viewDidAppear(_ animated: Bool) {
@@ -115,6 +115,7 @@ open class WZMessageViewController: UIViewController {
     
     clearIsTimestampDisplayCache()
     messageTableView.reloadData()
+    showLoadingIfNeeded()
     
   }
   
@@ -275,7 +276,7 @@ open class WZMessageViewController: UIViewController {
     
     messageTableView = WZMessageTableView(frame: view.bounds)
     messageTableView.backgroundColor = backgroundColor
-
+    
     let tap = UITapGestureRecognizer(target: self, action: #selector(WZMessageViewController.onClickTableView))
     tap.cancelsTouchesInView = false
     messageTableView.addGestureRecognizer(tap)
@@ -283,7 +284,7 @@ open class WZMessageViewController: UIViewController {
     view.sendSubview(toBack: messageTableView)
     
   }
-
+  
   fileprivate func initPoppingBottomView() {
     
     bottomViewPoppingController = WZMessageBottomViewPoppingController(withSuperView: view)
@@ -310,7 +311,7 @@ open class WZMessageViewController: UIViewController {
   }
   
   fileprivate func fetchMessageData(at index: Int) -> WZMessageData? {
-      
+    
     return dataSource?.messageViewController(self, messageDataForCellAtRow: index)
   }
   
@@ -345,7 +346,10 @@ open class WZMessageViewController: UIViewController {
    */
   fileprivate func showLoadingIfNeeded() {
     
-    guard delegate?.messageViewControllerWillLoadMoreMessages?(self) ?? false else { return }
+    guard delegate?.messageViewControllerWillLoadMoreMessages?(self) ?? false else {
+      messageTableView.hideLoadingView()
+      return
+    }
     messageTableView.showLoadingView()
     
   }
@@ -426,7 +430,6 @@ open class WZMessageViewController: UIViewController {
     if !isDecelerating || isLoadViewDisplaying() {
       adjustTableViewOffset(previousNumberOfMessages: previousNumberOfMessages, previousContentOffsetY: previousContentOffsetY)
     }
-    messageTableView.hideLoadingView()
     showLoadingIfNeeded()
     canLoadData = true
   }
@@ -570,8 +573,8 @@ extension WZMessageViewController: WZMessageInputViewPopControllerDelegate {
     let offsetLength = currentFrame.maxY - originFrame.maxY
     messageTableView.frame.origin.y = currentFrame.maxY - messageTableView.frame.height
     messageTableView.changeTableViewInsets(topIncrement: -offsetLength)
-//    不这么写是因为当tableView的高度变化的时候，contentOffset并不会改变，导致tableView的cell并不会被抬高
-//    messageTableView.frame.size.height = currentFrame.maxY
+    //    不这么写是因为当tableView的高度变化的时候，contentOffset并不会改变，导致tableView的cell并不会被抬高
+    //    messageTableView.frame.size.height = currentFrame.maxY
     
     delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: currentFrame)
     

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZMessageKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A short description of WZMessageKit."
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://iOSdefault:123456@test.game.xiaoyouapp.cn:20080/iOS/JXMessageKit.git", :tag => "master" }
+  s.source       = { :git => "http://iOSdefault:123456@test.game.xiaoyouapp.cn:20080/iOS/JXMessageKit.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
