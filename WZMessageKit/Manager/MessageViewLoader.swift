@@ -9,14 +9,14 @@
 import UIKit
 
 class MessageViewLoader {
-
+  
   private var viewCache = DictArray<String, WZMessageBaseView>()
   private var currentCountdict: [String: Int] = [:]
   private var maxCountdict: [String: Int] = [:]
   private var currentHeight: CGFloat = 0
   private var offsetNum = 0
   private var heightList: [(type: String, height: CGFloat)] = []
-
+  
   func preload(viewType: WZMessageBaseView.Type, height: CGFloat, maxHeight: CGFloat) {
     
     guard isNeedPreloadView(viewType: viewType, height: height, maxHeight: maxHeight) else { return }
@@ -24,10 +24,16 @@ class MessageViewLoader {
     let type = String(describing: viewType)
     let view = viewType.self.init()
     
+    view.frame = CGRect(x: 0, y: 0, width: 0, height: 1)
+    view.subviews.forEach({$0.frame = view.bounds})
+    
+    view.setNeedsLayout()
+    view.layoutIfNeeded()
+    
     viewCache.append(view, to: type)
     
 //    print("preload -------------------")
-//    
+//
 //    for (key, value) in viewCache {
 //      print("\(key), \(value.count)")
 //    }
@@ -41,9 +47,9 @@ class MessageViewLoader {
       print("have no cached messageView, create directly : \(viewType)")
       return viewType.self.init()
     }
-        
+    
 //    print("fetch -------------------")
-//    
+//
 //    for (key, value) in viewCache {
 //      print("\(key), \(value.count)")
 //    }
