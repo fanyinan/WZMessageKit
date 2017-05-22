@@ -21,5 +21,4 @@ open class WZMessageInputView: UIView {
   open func hideKeyboard() {}
   open func showKeyboard() {}
 
-  open func shouldShowTextViewMenu(_ isShow: Bool) { }
 }
