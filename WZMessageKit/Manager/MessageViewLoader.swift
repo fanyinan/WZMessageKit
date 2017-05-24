@@ -26,7 +26,10 @@ class MessageViewLoader {
     
     //防止出现异步创建的label文字发生重叠
     view.frame = CGRect(x: 0, y: 0, width: 0, height: 1)
-    view.subviews.forEach({$0.frame = view.bounds})
+    view.subviews.forEach { subview in
+      guard view.frame.size == CGSize.zero else { return }
+      subview.frame = view.bounds
+    }
     
     view.setNeedsLayout()
     view.layoutIfNeeded()
