@@ -16,6 +16,7 @@ public class WZMessageBottomViewPoppingController: NSObject {
   
   public var poppingView: UIView?
   private var superView: UIView
+  //swift4
   private var popViews: [UIView] = []
   
   weak var delegate: WZMessageBottomViewPoppingControllerDelegate?
@@ -101,7 +102,7 @@ public class WZMessageBottomViewPoppingController: NSObject {
   private func animateBottomView(poppingView: UIView, isShow: Bool, isNoticeDelegate: Bool = true) {
     
     var poppingFrame = poppingView.frame
-    poppingFrame.origin.y = isShow == true ? superView.frame.height - poppingFrame.height : superView.frame.height
+    poppingFrame.origin.y = isShow ? superView.frame.height - poppingFrame.height : superView.frame.height
     
     if isNoticeDelegate {
       delegate?.poppingBottomViewWillChange(poppingFrame, animationDuration: popAnimationDuration, animationOptions: popAnimationOptions, isShow: isShow)

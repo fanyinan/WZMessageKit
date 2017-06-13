@@ -10,15 +10,9 @@ import UIKit
 
 open class WZMessageInputView: UIView {
   
-  open var text: String {
-    get{
-      return ""
-    }
-    set{
-    }
-  }
+  open var textView: UITextView { get { return UITextView() } }
   
   open func hideKeyboard() {}
   open func showKeyboard() {}
-
+  
 }

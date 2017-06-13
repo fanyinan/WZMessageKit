@@ -11,7 +11,7 @@ import UIKit
 class MessageViewLoader {
   
   private var viewCache = DictArray<String, WZMessageBaseView>()
-  private var currentCountdict: [String: Int] = [:]
+  private var currentCountDict: [String: Int] = [:]
   private var maxCountdict: [String: Int] = [:]
   private var currentHeight: CGFloat = 0
   private var offsetNum = 0
@@ -66,9 +66,9 @@ class MessageViewLoader {
     let typeName = String(describing: viewType)
     heightList += [(type: typeName, height: height)]
     
-    var typeCount = currentCountdict[typeName] ?? 0
+    var typeCount = currentCountDict[typeName] ?? 0
     typeCount += 1
-    currentCountdict[typeName] = typeCount
+    currentCountDict[typeName] = typeCount
     
     let currentTypeViewCount = typeCount
     let maxTypeViewCount = maxCountdict[typeName] ?? 0
@@ -91,7 +91,7 @@ class MessageViewLoader {
         currentHeight -= heightList[offsetNum].height
         
         let type = heightList[offsetNum - 1].type
-        currentCountdict[type]! -= 1
+        currentCountDict[type]! -= 1
         
       }
       
