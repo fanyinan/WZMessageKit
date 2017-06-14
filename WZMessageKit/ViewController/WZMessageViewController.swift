@@ -34,9 +34,9 @@ public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
 open class WZMessageViewController: UIViewController {
   
   public var messageTableView: WZMessageTableView!
-  public var messageInputView: WZMessageInputView!
-  public var bottomViewPoppingController: WZMessageBottomViewPoppingController!
-  fileprivate var messageInputViewPopController: WZMessageInputViewPopController!
+  public var messageInputView: WZMessageInputView?
+  public var bottomViewPoppingController: WZMessageBottomViewPoppingController?
+  fileprivate var messageInputViewPopController: WZMessageInputViewPopController?
   fileprivate var timestampDisplayCache: [Int: Bool] = [:]
   fileprivate var canLoadData = true //用于标记是否在一次拖动中已经加载过数据，防止一次拖动多次加载
   fileprivate var actionsPerformWhenEndScrollingAnimation: [(() -> Void)] = []
@@ -180,33 +180,33 @@ open class WZMessageViewController: UIViewController {
   }
   
   public func addPoppingView(_ view: UIView) {
-    bottomViewPoppingController.addPoppingView(view)
+    bottomViewPoppingController?.addPoppingView(view)
   }
   
   public func togglePoppingView(_ view: UIView) {
-    bottomViewPoppingController.toggleView(view)
+    bottomViewPoppingController?.toggleView(view)
   }
   
   public func hidePoppingView(isNoticeDelegate: Bool) {
-    bottomViewPoppingController.hidePoppingView(isNoticeDelegate: isNoticeDelegate)
+    bottomViewPoppingController?.hidePoppingView(isNoticeDelegate: isNoticeDelegate)
   }
   
   public func showKeyboard() {
-    messageInputView.showKeyboard()
+    messageInputView?.showKeyboard()
   }
   
   public func hideKeyboard() {
-    messageInputView.hideKeyboard()
+    messageInputView?.hideKeyboard()
   }
   
   public func hideKeyboardAndBottomView() {
-    bottomViewPoppingController.hidePoppingView()
-    messageInputView.hideKeyboard()
+    bottomViewPoppingController?.hidePoppingView()
+    messageInputView?.hideKeyboard()
   }
   
   public func setInputViewHidden(_ hidden: Bool, isAdjustBottomInset: Bool = true ) {
     
-    guard messageInputView.isHidden != hidden else { return }
+    guard let messageInputView = messageInputView, messageInputView.isHidden != hidden else { return }
     
     hideKeyboardAndBottomView()
     
@@ -218,7 +218,7 @@ open class WZMessageViewController: UIViewController {
       
     }
     
-    messageInputViewPopController.enable = !hidden
+    messageInputViewPopController?.enable = !hidden
     
   }
   
@@ -264,7 +264,7 @@ open class WZMessageViewController: UIViewController {
    ******************************************************************************/
   //MARK: - private method
   
-  fileprivate func setupUI() {
+  private func setupUI() {
     
     view.backgroundColor = backgroundColor
     
@@ -272,7 +272,7 @@ open class WZMessageViewController: UIViewController {
     
   }
   
-  fileprivate func initMessageTableView() {
+  private func initMessageTableView() {
     
     messageTableView = WZMessageTableView(frame: view.bounds)
     messageTableView.backgroundColor = backgroundColor
@@ -285,11 +285,12 @@ open class WZMessageViewController: UIViewController {
     
   }
   
-  fileprivate func initPoppingBottomView() {
+  private func initPoppingBottomView() {
     
-    bottomViewPoppingController = WZMessageBottomViewPoppingController(withSuperView: view)
+    let bottomViewPoppingController = WZMessageBottomViewPoppingController(withSuperView: view)
     bottomViewPoppingController.delegate = messageInputViewPopController
     
+    self.bottomViewPoppingController = bottomViewPoppingController
   }
   
   private func adjustDataCache(numberOfIncreasedMessages: Int) {
@@ -511,7 +512,7 @@ extension WZMessageViewController: UITableViewDelegate {
   
   public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     
-    bottomViewPoppingController.hidePoppingView()
+    bottomViewPoppingController?.hidePoppingView()
     hideKeyboardAndBottomView()
     
   }
