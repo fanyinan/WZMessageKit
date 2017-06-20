@@ -48,7 +48,6 @@ class KeyBoardController: NSObject {
     NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardController.handleKeyboardDidHideNotification(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
   }
   
-  
   func handleKeyboardWillAppearNotification(_ notification: Notification) {
     
     isShow = true
@@ -79,7 +78,7 @@ class KeyBoardController: NSObject {
     
       let animationOptions = UIViewAnimationOptions(rawValue: UInt(curve << 16))
     
-      delegate?.keyboardWillChange(keyBoardFrame, animationDuration: duration, animationOptions: animationOptions, isShow: notification.name == NSNotification.Name.UIKeyboardWillShow ? true : false)
+      delegate?.keyboardWillChange(keyBoardFrame, animationDuration: duration, animationOptions: animationOptions, isShow: notification.name == NSNotification.Name.UIKeyboardWillShow)
     }
   }
 }

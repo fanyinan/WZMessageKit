@@ -102,6 +102,16 @@ open class WZMessageViewController: UIViewController {
     
   }
   
+  open override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+    messageTableView.visibleCells.forEach { cell in
+      
+      guard let messageCell = cell as? WZMessageContainerCell else { return }
+      messageCell.messageCellDidEndDisplay()
+    }
+  }
+  
   deinit {
     WZMessageViewManager.shared.end()
   }
