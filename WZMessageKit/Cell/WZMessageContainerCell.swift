@@ -148,7 +148,6 @@ open class WZMessageContainerCell: UITableViewCell {
     let timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 18))
     timeLabel.textColor = .subText
     timeLabel.font = UIFont.systemFont(ofSize: 12)
-    timeLabel.backgroundColor = messageViewController.backgroundColor
     timeLabel.textAlignment = .center
     
     return timeLabel
