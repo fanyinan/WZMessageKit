@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZMessageKit"
-  s.version      = "0.0.7"
+  s.version      = "0.0.9"
   s.summary      = "A message kit that is easy to expand"
 
   # This description is used to generate tags and improve search results.

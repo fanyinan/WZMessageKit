@@ -148,7 +148,7 @@ open class WZMessageContainerCell: UITableViewCell {
     let timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 18))
     timeLabel.textColor = .subText
     timeLabel.font = UIFont.systemFont(ofSize: 12)
-    timeLabel.backgroundColor = UIColor(hex: 0xeeeeee)
+    timeLabel.backgroundColor = messageViewController.backgroundColor
     timeLabel.textAlignment = .center
     
     return timeLabel
@@ -173,7 +173,7 @@ open class WZMessageContainerCell: UITableViewCell {
     
     timeView.isHidden = !isDisplayTime
     
-    let height = isDisplayTime == true ? WZMessageContainerCell.timeViewHeight : 0
+    let height = isDisplayTime ? WZMessageContainerCell.timeViewHeight : 0
     timeView.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: height)
  
     timeLabel.frame = timeView.bounds
@@ -222,12 +222,7 @@ open class WZMessageContainerCell: UITableViewCell {
   
   open func configStatusView() {
     
-    let isShowStatus = messageData.ownerType == .sender
-    statusView.isHidden = !isShowStatus
-    
-    if isShowStatus {
-      setMessageStatus(messageData.status)
-    }
+    setMessageStatus(messageData.status)
     
     if messageData.ownerType == .sender {
       statusView.frame.origin.x = customContentView.frame.minX - WZMessageContainerCell.statusViewMargin - statusView.frame.width

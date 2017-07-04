@@ -129,7 +129,7 @@ open class WZMessageViewController: UIViewController {
     
   }
   
-  public func appendMessages(isScrollToBottom: Bool = true) {
+  public func reload(isScrollToBottom: Bool = true) {
     
     messageTableView.reloadData()
     
@@ -224,7 +224,7 @@ open class WZMessageViewController: UIViewController {
     
     if isAdjustBottomInset {
       
-      messageTableView.setTableViewInsets(bottom: hidden == true ? 0 : messageInputView.frame.height)
+      messageTableView.setTableViewInsets(bottom: hidden ? 0 : messageInputView.frame.height)
       
     }
     
