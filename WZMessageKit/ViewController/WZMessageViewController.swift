@@ -122,13 +122,21 @@ open class WZMessageViewController: UIViewController {
    ******************************************************************************/
   //MARK: - method
   
-  public func reload(isScrollToBottom: Bool = true) {
+  public func refresh(isScrollToBottom: Bool = true) {
     
     messageTableView.reloadData()
     
     if isScrollToBottom {
       scrollToBottomAnimated(isAnimated: true)
     }
+    
+  }
+  
+  public func reloadMessageData() {
+    
+    clearIsTimestampDisplayCache()
+    messageTableView.reloadData()
+    showLoadingIfNeeded()
     
   }
   
@@ -294,14 +302,6 @@ open class WZMessageViewController: UIViewController {
     bottomViewPoppingController.delegate = messageInputViewPopController
     
     self.bottomViewPoppingController = bottomViewPoppingController
-  }
-  
-  private func reloadMessageData() {
-    
-    clearIsTimestampDisplayCache()
-    messageTableView.reloadData()
-    showLoadingIfNeeded()
-    
   }
   
   private func adjustDataCache(numberOfIncreasedMessages: Int) {

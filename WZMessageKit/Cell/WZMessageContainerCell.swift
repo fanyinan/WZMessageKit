@@ -58,6 +58,20 @@ open class WZMessageContainerCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
+  open func setupUI() {
+    
+    selectionStyle = .none
+    contentView.backgroundColor = UIColor.clear
+    backgroundColor = UIColor.clear
+    
+    initContainerView()
+    initAvatar()
+    initCustomView()
+    initTimeLabel()
+    initStatusView()
+    
+  }
+  
   override open func layoutSubviews() {
     super.layoutSubviews()
     
@@ -238,20 +252,6 @@ open class WZMessageContainerCell: UITableViewCell {
     statusView = createStatusView()
     messageContainerView.addSubview(statusView)
     statusView.addTarget(self, action: #selector(WZMessageContainerCell.statusViewClick(_:)), for: .touchUpInside)
-  }
-  
-  private func setupUI() {
-    
-    selectionStyle = .none
-    contentView.backgroundColor = UIColor.clear
-    backgroundColor = UIColor.clear
-    
-    initContainerView()
-    initAvatar()
-    initCustomView()
-    initTimeLabel()
-    initStatusView()
-    
   }
   
   private func initContainerView() {
