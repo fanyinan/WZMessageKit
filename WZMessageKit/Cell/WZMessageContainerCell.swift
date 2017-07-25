@@ -18,8 +18,8 @@ open class WZMessageContainerCell: UITableViewCell {
   
   public var customContentView: WZMessageBaseView!
   private var timeView: UIView!
-  private var messageContainerView: UIView!
-  private var avatarButton: UIControl!
+  public private(set) var messageContainerView: UIView!
+  public private(set) var avatarButton: UIControl!
   private(set) var avatarImageView: UIImageView!
   private(set) var timeLabel: UILabel!
   private(set) var statusView: WZMessageStatusView!

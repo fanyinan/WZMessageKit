@@ -64,7 +64,7 @@ class MessageViewLoader {
   private func isNeedPreloadView<T: UIView>(viewType: T.Type, height: CGFloat, maxHeight: CGFloat) -> Bool {
     
     let typeName = String(describing: viewType)
-    heightList += [(type: typeName, height: height)]
+    heightList.append((type: typeName, height: height))
     
     var typeCount = currentCountDict[typeName] ?? 0
     typeCount += 1

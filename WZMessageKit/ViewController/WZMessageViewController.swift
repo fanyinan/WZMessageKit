@@ -27,7 +27,8 @@ public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, messageContentView: WZMessageBaseView, onCatchEvent messageEvent: WZMessageEvent, atIndex index: Int)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, willDisplay messageData: WZMessageData)
   @objc optional func messageViewController(_ messageViewController: WZMessageViewController, inputViewFrameChangeWithAnimation inputViewFrame: CGRect)
-  
+  @objc optional func messageViewController(_ messageViewController: WZMessageViewController, configMessageContainerCell messageContainerCell: WZMessageContainerCell, atIndex index: Int)
+
 }
 
 //MARK:- WZMessageViewController
@@ -120,14 +121,6 @@ open class WZMessageViewController: UIViewController {
    *   method
    ******************************************************************************/
   //MARK: - method
-  
-  public func reloadMessageData() {
-    
-    clearIsTimestampDisplayCache()
-    messageTableView.reloadData()
-    showLoadingIfNeeded()
-    
-  }
   
   public func reload(isScrollToBottom: Bool = true) {
     
@@ -301,6 +294,14 @@ open class WZMessageViewController: UIViewController {
     bottomViewPoppingController.delegate = messageInputViewPopController
     
     self.bottomViewPoppingController = bottomViewPoppingController
+  }
+  
+  private func reloadMessageData() {
+    
+    clearIsTimestampDisplayCache()
+    messageTableView.reloadData()
+    showLoadingIfNeeded()
+    
   }
   
   private func adjustDataCache(numberOfIncreasedMessages: Int) {
@@ -501,6 +502,8 @@ extension WZMessageViewController: UITableViewDataSource {
     
     cell.configureCell(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: row))
     
+    delegate?.messageViewController?(self, configMessageContainerCell: cell, atIndex: row)
+
     return cell
     
   }

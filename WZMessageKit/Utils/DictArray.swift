@@ -15,7 +15,7 @@ class DictArray<T: Hashable, U: Any>: Sequence {
   func append(_ item: U, to key: T) {
     
     var array = data[key] ?? []
-    array += [item]
+    array.append(item)
 
     data[key] = array
   }

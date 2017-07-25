@@ -20,7 +20,7 @@ class WZMessageViewManager {
   func begin() {
     
     currentMessageViewLoader = MessageViewLoader()
-    messageViewLoaderStack += [currentMessageViewLoader]
+    messageViewLoaderStack.append(currentMessageViewLoader)
     
   }
   
