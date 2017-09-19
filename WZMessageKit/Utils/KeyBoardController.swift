@@ -48,13 +48,13 @@ class KeyBoardController: NSObject {
     NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardController.handleKeyboardDidHideNotification(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
   }
   
-  func handleKeyboardWillAppearNotification(_ notification: Notification) {
+  @objc func handleKeyboardWillAppearNotification(_ notification: Notification) {
     
     isShow = true
     keyBoardWillChange(notification)
   }
   
-  func handleKeyboardWillHideNotification(_ notification: Notification) {
+  @objc func handleKeyboardWillHideNotification(_ notification: Notification) {
     
     if isShow {
       isShow = false
@@ -63,10 +63,10 @@ class KeyBoardController: NSObject {
     
   }
   
-  func handleKeyboardDidAppearNotification(_ notification: Notification) {
+  @objc func handleKeyboardDidAppearNotification(_ notification: Notification) {
   }
   
-  func handleKeyboardDidHideNotification(_ notification: Notification) {
+  @objc func handleKeyboardDidHideNotification(_ notification: Notification) {
   }
   
   func keyBoardWillChange(_ notification: Notification) {
