@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WZReusableView
 
 //MARK:- WZMessageViewControllerDataSource
 public protocol WZMessageViewControllerDataSource: NSObjectProtocol {
@@ -76,18 +77,11 @@ open class WZMessageViewController: UIViewController {
     //放在viewDidLayoutSubviews中可以获得tableview的实际尺寸
     if !isPreloadedAtFirst {
       isPreloadedAtFirst = true
-      preloadMessageData()
-    }
-    
-    //保证首次预加载完成之后再加载tableview的数据
-    if messageTableView.dataSource == nil || messageTableView.delegate == nil {
+      preloadMessageData(viewHeight: messageTableView.frame.height)
       
-      messageTableView.delegate = self
-      messageTableView.dataSource = self
-      
+      //保证首次预加载完成之后再加载tableview的数据
       reloadMessageData()
       scrollToBottomAnimated(isAnimated: false)
-      
     }
     
     if let messageInputView = messageInputView {
@@ -137,20 +131,20 @@ open class WZMessageViewController: UIViewController {
     clearIsTimestampDisplayCache()
     messageTableView.reloadData()
     showLoadingIfNeeded()
-    
+
   }
   
-  public func deleteMessage(at index: Int, animation: UITableViewRowAnimation) {
-    
-    removeAndForwardTimestampDisplayCache(at: index)
-    messageTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: animation)
-    
-  }
+//  public func deleteMessage(at index: Int, animation: WZReusableViewCellAnimation, completion: @escaping ()->Void) {
+//
+//    removeAndForwardTimestampDisplayCache(at: index)
+//    messageTableView.delete(at: index, with: animation, completion: completion)
+//
+//  }
   
   public func reloadData(at index: Int) {
     
-    messageTableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
-    
+    messageTableView.reload(indices: [index])
+
   }
   
   public func addInputView(inputView: WZMessageInputView) {
@@ -169,9 +163,11 @@ open class WZMessageViewController: UIViewController {
   
   public func finishLoadMoreMessages() {
     
+    let viewHeight = messageTableView.frame.height
+    
     DispatchQueue.global().async {
       
-      self.preloadMessageData()
+      self.preloadMessageData(viewHeight: viewHeight)
       
       Thread.sleep(forTimeInterval: 0.1)
       
@@ -185,7 +181,7 @@ open class WZMessageViewController: UIViewController {
   
   public func setStatus(_ status: WZMessageStatus, at index: Int) {
     
-    if let cell = messageTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? WZMessageContainerCell {
+    if let cell = messageTableView.cell(at: index) as? WZMessageContainerCell {
       cell.setMessageStatus(status)
     }
   }
@@ -235,18 +231,17 @@ open class WZMessageViewController: UIViewController {
   
   public func scrollToBottomAnimated(isAnimated: Bool) {
     
-    let numberOfRows = messageTableView.numberOfRows(inSection: 0)
+    let numberOfCells = messageTableView.numberOfCells
     
-    guard numberOfRows > 0 else { return }
+    guard numberOfCells > 0 else { return }
     
-    messageTableView.scrollToRow(at: IndexPath(row: numberOfRows - 1, section: 0), at: .bottom, animated: isAnimated)
-    
+    messageTableView.scroll(to: numberOfCells - 1, at: .bottom, animated: isAnimated)
   }
   
   //在不reload的情况下更新cell的messageData，不会更新UI
   public func updateCellMessageData(at index: Int) {
     
-    guard let cell = messageTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? WZMessageContainerCell else { return }
+    guard let cell = messageTableView.cell(at: index) as? WZMessageContainerCell else { return }
     
     guard let messageData = fetchMessageData(at: index) else { return }
     
@@ -262,7 +257,7 @@ open class WZMessageViewController: UIViewController {
   
   public func getMessageView(at index: Int) -> WZMessageBaseView? {
     
-    guard let cell = messageTableView.cellForRow(at: IndexPath(row: index, section: 0)) as? WZMessageContainerCell, let messageBaseView = cell.customContentView else {
+    guard let cell = messageTableView.cell(at: index) as? WZMessageContainerCell, let messageBaseView = cell.customContentView else {
       
       return nil
     }
@@ -287,12 +282,15 @@ open class WZMessageViewController: UIViewController {
     
     messageTableView = WZMessageTableView(frame: view.bounds)
     messageTableView.backgroundColor = backgroundColor
-    
+    messageTableView.reusableViewDelegate = self
+    messageTableView.dataSource = self
+    messageTableView.register(cellClass: messageContainerCellClass)
+    view.addSubview(messageTableView)
+    view.sendSubview(toBack: messageTableView)
+
     let tap = UITapGestureRecognizer(target: self, action: #selector(WZMessageViewController.onClickTableView))
     tap.cancelsTouchesInView = false
     messageTableView.addGestureRecognizer(tap)
-    view.addSubview(messageTableView)
-    view.sendSubview(toBack: messageTableView)
     
   }
   
@@ -314,9 +312,9 @@ open class WZMessageViewController: UIViewController {
   
   private func adjustTableViewOffset(previousNumberOfMessages: Int, previousContentOffsetY: CGFloat) {
     
-    let currentNumberOfMessages = messageTableView.numberOfRows(inSection: 0)
+    let currentNumberOfMessages = messageTableView.numberOfCells
     
-    let previousFirstCellFrame = messageTableView.rectForRow(at: IndexPath(item: currentNumberOfMessages - previousNumberOfMessages, section: 0))
+    let previousFirstCellFrame = messageTableView.rect(at: currentNumberOfMessages - previousNumberOfMessages)
     
     messageTableView.setContentOffset(CGPoint(x: 0, y: previousFirstCellFrame.minY + previousContentOffsetY), animated: false)
     
@@ -400,7 +398,7 @@ open class WZMessageViewController: UIViewController {
     }
   }
   
-  private func preloadMessageData() {
+  private func preloadMessageData(viewHeight: CGFloat) {
     
     let messageCount = dataSource?.numberOfMessageInMessageViewController(self) ?? 0
     let numberOfIncreasedMessages = messageCount - preloadedMessageCount
@@ -422,7 +420,7 @@ open class WZMessageViewController: UIViewController {
       guard let messageData = fetchMessageData(at: i) else { continue }
       
       let isDisplayTimestamp = fetchIsTimestampDisplay(index: i)
-      WZMessageContainerCell.preloadData(messageData: messageData, isDisplayTime: isDisplayTimestamp, tableViewHeight: messageTableView.frame.height)
+      WZMessageContainerCell.preloadData(messageData: messageData, isDisplayTime: isDisplayTimestamp, collectionViewHeight: viewHeight)
       
       if isDisplayTimestamp {
         let timeString = delegate?.messageViewController?(self, configTimeLabel: messageData.sendTime, atIndex: i) ?? ""
@@ -434,7 +432,7 @@ open class WZMessageViewController: UIViewController {
   private func updateUIWhenFinishLoadMoreMessage() {
     
     let previousContentOffsetY = messageTableView.contentOffset.y
-    let previousNumberOfMessages = messageTableView.numberOfRows(inSection: 0)
+    let previousNumberOfMessages = messageTableView.numberOfCells
     
     messageTableView.reloadData()
     
@@ -452,39 +450,23 @@ open class WZMessageViewController: UIViewController {
 }
 
 //MARK:- UITableViewDataSourcea
-extension WZMessageViewController: UITableViewDataSource {
+extension WZMessageViewController: WZReusableViewDataSource {
   
-  public func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
-  
-  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  public func numberOfCells(_ reusableView: WZReusableView) -> Int {
     return dataSource?.numberOfMessageInMessageViewController(self) ?? 0
   }
-  
-  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+  public func reusableView(_ reusableView: WZReusableView, cellAt index: Int) -> WZReusableCell {
     
-    let row = indexPath.row
-    
-    guard let messageData = fetchMessageData(at: row) else {
-      return UITableViewCell(style: .default, reuseIdentifier: nil)
+    guard let messageData = fetchMessageData(at: index) else {
+      return WZReusableCell(frame: .zero, contentViewType: UIView.self)
     }
     
-    let identifier = String(describing: messageData.mappingMessageView)
-    
-    var cell: WZMessageContainerCell!
-    
-    if let _cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? WZMessageContainerCell {
-      cell = _cell
-    } else {
-      tableView.register(messageContainerCellClass, forCellReuseIdentifier: identifier)
-      cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! WZMessageContainerCell
-    }
-    
+    let cell = reusableView.dequeueReusableCell(contentViewType: messageData.mappingMessageView, for: index) as! WZMessageContainerCell
     cell.messageViewController = self
-    cell.row = row
+    cell.row = index
     
-    if fetchIsTimestampDisplay(index: row) {
+    if fetchIsTimestampDisplay(index: index) {
       
       if let timeString = dateStringCache[messageData.sendTime.hashValue] {
         
@@ -492,36 +474,35 @@ extension WZMessageViewController: UITableViewDataSource {
         
       } else {
         
-        let timeString = delegate?.messageViewController?(self, configTimeLabel: messageData.sendTime, atIndex: row) ?? ""
+        let timeString = delegate?.messageViewController?(self, configTimeLabel: messageData.sendTime, atIndex: index) ?? ""
         cell.setTimeStamp(timeString)
         dateStringCache[messageData.sendTime.hashValue] = timeString
       }
     }
     
-    delegate?.messageViewController?(self, configAvatarImageView: cell.avatarImageView, atIndex: row)
+    delegate?.messageViewController?(self, configAvatarImageView: cell.avatarImageView, atIndex: index)
     
-    cell.configureCell(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: row))
+    cell.configureCell(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: index))
     
-    delegate?.messageViewController?(self, configMessageContainerCell: cell, atIndex: row)
+    delegate?.messageViewController?(self, configMessageContainerCell: cell, atIndex: index)
 
     return cell
+    
+  }
+  
+  public func reusableView(_ reusableView: WZReusableView, heightAt index: Int) -> CGFloat {
+    
+    guard let messageData = fetchMessageData(at: index) else {
+      return 1
+    }
+    
+    return WZMessageContainerCell.calculateMessageCellHeightWith(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: index))
     
   }
 }
 
 //MARK:- UITableViewDelegate
-extension WZMessageViewController: UITableViewDelegate {
-  
-  public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    
-    let row = indexPath.row
-    
-    guard let messageData = fetchMessageData(at: row) else {
-      return 1
-    }
-    
-    return WZMessageContainerCell.calculateMessageCellHeightWith(messageData: messageData, isDisplayTime: fetchIsTimestampDisplay(index: row))
-  }
+extension WZMessageViewController: WZReusableViewDelegate {
   
   public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     
@@ -556,17 +537,18 @@ extension WZMessageViewController: UITableViewDelegate {
     
   }
   
-  public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+  public func reusableView(_ reusableView: WZReusableView, willDisplay cell: WZReusableCell, at index: Int) {
     
     (cell as! WZMessageContainerCell).messageCellDidEndDisplay()
     
   }
-  
-  public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+  public func reusableView(_ reusableView: WZReusableView, didEndDisplaying cell: WZReusableCell, at index: Int) {
     
-    if let messageData = fetchMessageData(at: indexPath.row) {
+    if let messageData = fetchMessageData(at: index) {
       delegate?.messageViewController?(self, willDisplay: messageData)
     }
+    
     (cell as! WZMessageContainerCell).messageCellWillDisplay()
     
   }
@@ -587,7 +569,7 @@ extension WZMessageViewController: WZMessageInputViewPopControllerDelegate {
     let offsetLength = currentFrame.maxY - originFrame.maxY
     messageTableView.frame.origin.y = currentFrame.maxY - messageTableView.frame.height
     messageTableView.changeTableViewInsets(topIncrement: -offsetLength)
-    //    不这么写是因为当tableView的高度变化的时候，contentOffset并不会改变，导致tableView的cell并不会被抬高
+    //    不这么写是因为当collectionView的高度变化的时候，contentOffset并不会改变，导致collectionView的cell并不会被抬高
     //    messageTableView.frame.size.height = currentFrame.maxY
     
     delegate?.messageViewController?(self, inputViewFrameChangeWithAnimation: currentFrame)

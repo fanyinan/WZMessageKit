@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZMessageKit"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "A message kit that is easy to expand"
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://iOSdefault:123456@test.game.xiaoyouapp.cn:20080/iOS/JXMessageKit.git", :tag => "#{s.version}" }
+  s.source       = { :git => "http://test.game.xiaoyouapp.cn:20080/iOS/JXMessageKit.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -136,5 +136,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
+  s.dependency "WZReusableView"
+  
 end
