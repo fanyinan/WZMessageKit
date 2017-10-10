@@ -19,8 +19,7 @@ open class WZMessageContainerCell: WZReusableCell {
   public var customContentView: WZMessageBaseView!
   private var timeView: UIView!
   public private(set) var messageContainerView: UIView!
-  public private(set) var avatarButton: UIControl!
-  private(set) var avatarImageView: UIImageView!
+  public private(set) var avatarImageView: UIImageView!
   private(set) var timeLabel: UILabel!
   private(set) var statusView: WZMessageStatusView!
   
@@ -67,7 +66,7 @@ open class WZMessageContainerCell: WZReusableCell {
     
   }
   
-  public func configureCell(messageData: WZMessageData, isDisplayTime: Bool) {
+  open func configureCell(messageData: WZMessageData, isDisplayTime: Bool) {
     
     self.messageData = messageData
     self.isDisplayTime = isDisplayTime
@@ -139,7 +138,7 @@ open class WZMessageContainerCell: WZReusableCell {
     delegate?.messageContainerCell(self, didClickStatusView: sender.status)
   }
   
-  @objc private func onClickAvatar(_ sender: UIControl) {
+  @objc private func onClickAvatar() {
     delegate?.messageContainerCell(self, didClickAvatarImageView: avatarImageView)
   }
   
@@ -163,7 +162,6 @@ open class WZMessageContainerCell: WZReusableCell {
     let avatarImageView = UIImageView()
     avatarImageView.contentMode = .scaleAspectFill
     avatarImageView.clipsToBounds = true
-    avatarImageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     
     return avatarImageView
   }
@@ -180,15 +178,15 @@ open class WZMessageContainerCell: WZReusableCell {
   
   open func configAvatarWithMessage() {
     
-    avatarButton.isHidden = messageData.ownerType == .custom
+    avatarImageView.isHidden = messageData.ownerType == .custom
     
-    guard !avatarButton.isHidden else { return }
+    guard !avatarImageView.isHidden else { return }
     
-    avatarButton.frame.size = CGSize(width: WZMessageContainerCell.avatarSideLength, height: WZMessageContainerCell.avatarSideLength)
+    avatarImageView.frame.size = CGSize(width: WZMessageContainerCell.avatarSideLength, height: WZMessageContainerCell.avatarSideLength)
     if messageData.ownerType == .sender {
-      avatarButton.frame.origin.x = messageContainerView.frame.width - WZMessageContainerCell.contentMargin - WZMessageContainerCell.avatarSideLength
+      avatarImageView.frame.origin.x = messageContainerView.frame.width - WZMessageContainerCell.contentMargin - WZMessageContainerCell.avatarSideLength
     } else if messageData.ownerType == .receiver{
-      avatarButton.frame.origin.x = WZMessageContainerCell.contentMargin
+      avatarImageView.frame.origin.x = WZMessageContainerCell.contentMargin
     }
   }
   
@@ -200,11 +198,11 @@ open class WZMessageContainerCell: WZReusableCell {
       
       if messageData.ownerType == .sender {
         
-        customContentView.frame.origin.x = avatarButton.frame.minX - WZMessageContainerCell.contentMargin - customContentView.frame.width
+        customContentView.frame.origin.x = avatarImageView.frame.minX - WZMessageContainerCell.contentMargin - customContentView.frame.width
         
       } else if messageData.ownerType == .receiver{
         
-        customContentView.frame.origin.x = avatarButton.frame.maxX + WZMessageContainerCell.contentMargin
+        customContentView.frame.origin.x = avatarImageView.frame.maxX + WZMessageContainerCell.contentMargin
         
       }
       
@@ -250,12 +248,12 @@ open class WZMessageContainerCell: WZReusableCell {
   
   private func initAvatar() {
     
-    avatarButton = UIControl()
-    messageContainerView.addSubview(avatarButton)
-    avatarButton.addTarget(self, action: #selector(WZMessageContainerCell.onClickAvatar(_:)), for: .touchUpInside)
-    
     avatarImageView = createAvatarImageView()
-    avatarButton.addSubview(avatarImageView)
+    messageContainerView.addSubview(avatarImageView)
+    
+    avatarImageView.isUserInteractionEnabled = true
+    let tap = UITapGestureRecognizer(target: self, action: #selector(onClickAvatar))
+    avatarImageView.addGestureRecognizer(tap)
     
   }
   

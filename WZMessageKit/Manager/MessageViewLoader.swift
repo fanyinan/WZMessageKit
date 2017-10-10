@@ -36,11 +36,11 @@ class MessageViewLoader {
     
     viewCache.append(view, to: type)
     
-    print("preload -------------------")
-
-    for (key, value) in viewCache {
-      print("\(key), \(value.count)")
-    }
+//    print("preload -------------------")
+//
+//    for (key, value) in viewCache {
+//      print("\(key), \(value.count)")
+//    }
   }
   
   func fetch<T: WZMessageBaseView>(viewType: T.Type) -> T {
@@ -52,11 +52,11 @@ class MessageViewLoader {
       return viewType.self.init()
     }
     
-    print("fetch -------------------")
-
-    for (key, value) in viewCache {
-      print("\(key), \(value.count)")
-    }
+//    print("fetch -------------------")
+//
+//    for (key, value) in viewCache {
+//      print("\(key), \(value.count)")
+//    }
     
     return view as! T
   }
