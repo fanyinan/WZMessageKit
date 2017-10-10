@@ -165,18 +165,13 @@ open class WZMessageViewController: UIViewController {
     
     let viewHeight = messageTableView.frame.height
     
-    DispatchQueue.global().async {
-      
-      self.preloadMessageData(viewHeight: viewHeight)
-      
-      Thread.sleep(forTimeInterval: 0.1)
-      
-      DispatchQueue.main.async {
-        
-        self.updateUIWhenFinishLoadMoreMessage()
-        
-      }
+    preloadMessageData(viewHeight: viewHeight)
+    
+    let delay = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: delay) {
+      self.updateUIWhenFinishLoadMoreMessage()
     }
+    
   }
   
   public func setStatus(_ status: WZMessageStatus, at index: Int) {
