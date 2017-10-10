@@ -6,7 +6,7 @@
 //  Copyright © 2016年 范祎楠. All rights reserved.
 //
 
-import UIKit
+import WZReusableView
 
 protocol WZMessageContainerCellDelegate: NSObjectProtocol {
   func messageContainerCell(_ messageContainerCell: WZMessageContainerCell, didClickAvatarImageView avatarImageView: UIImageView)
@@ -14,7 +14,7 @@ protocol WZMessageContainerCellDelegate: NSObjectProtocol {
   func messageContainerCell(_ messageContainerCell: WZMessageContainerCell, messageEvent: WZMessageEvent)
 }
 
-open class WZMessageContainerCell: UITableViewCell {
+open class WZMessageContainerCell: WZReusableCell {
   
   public var customContentView: WZMessageBaseView!
   private var timeView: UIView!
@@ -23,7 +23,6 @@ open class WZMessageContainerCell: UITableViewCell {
   private(set) var avatarImageView: UIImageView!
   private(set) var timeLabel: UILabel!
   private(set) var statusView: WZMessageStatusView!
-  private var contentViewType: WZMessageBaseView.Type!
   
   var row: Int! {
     didSet{
@@ -47,10 +46,8 @@ open class WZMessageContainerCell: UITableViewCell {
   
   fileprivate weak var delegate: WZMessageContainerCellDelegate?
   
-  required override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
-    contentViewType = WZMessageViewManager.shared.messageViewType(typeIdentifier: reuseIdentifier!)
+  required public init(frame: CGRect, contentViewType: UIView.Type) {
+    super.init(frame: frame, contentViewType: contentViewType)
     setupUI()
   }
   
@@ -60,8 +57,6 @@ open class WZMessageContainerCell: UITableViewCell {
   
   open func setupUI() {
     
-    selectionStyle = .none
-    contentView.backgroundColor = UIColor.clear
     backgroundColor = UIColor.clear
     
     initContainerView()
@@ -72,25 +67,18 @@ open class WZMessageContainerCell: UITableViewCell {
     
   }
   
-  override open func layoutSubviews() {
-    super.layoutSubviews()
-    
-    guard messageData != nil else { return }
-    
-    configTime()
-    layoutMessageContainerView()
-    configAvatarWithMessage()
-    configCustomContentView()
-    configStatusView()
-    
-  }
-  
   public func configureCell(messageData: WZMessageData, isDisplayTime: Bool) {
     
     self.messageData = messageData
     self.isDisplayTime = isDisplayTime
     
     delegate = messageViewController as WZMessageContainerCellDelegate
+    
+    configTime()
+    layoutMessageContainerView()
+    configAvatarWithMessage()
+    configCustomContentView()
+    configStatusView()
   }
   
   public func setTimeStamp(_ timeString: String) {
@@ -105,12 +93,10 @@ open class WZMessageContainerCell: UITableViewCell {
   
   public func reload(scrollToBottom: Bool) {
     
-    let indexPath = IndexPath(row: row, section: 0)
-    
-    messageViewController.messageTableView.reloadRows(at: [indexPath], with: .none)
+    messageViewController.messageTableView.reload(indices: [row])
     
     if scrollToBottom {
-      messageViewController.messageTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+      messageViewController.messageTableView.scroll(to: row, at: .bottom, animated: true)
     }
   }
   
@@ -127,12 +113,12 @@ open class WZMessageContainerCell: UITableViewCell {
     return calculateMessageCellHeightWith(messageData: messageData, customContentViewHeight: calculateMessageCustomContentView(with: messageData).height, isDisplayTime: isDisplayTime)
   }
   
-  public class func preloadData(messageData: WZMessageData, isDisplayTime: Bool, tableViewHeight: CGFloat) {
+  public class func preloadData(messageData: WZMessageData, isDisplayTime: Bool, collectionViewHeight: CGFloat) {
     
     messageData.mappingMessageView.preloadData(with: messageData)
     
     let cellHeight = calculateMessageCellHeightWith(messageData: messageData, isDisplayTime: isDisplayTime)
-    WZMessageViewManager.shared.preload(with: messageData.mappingMessageView, with: cellHeight, maxHeight: tableViewHeight)
+    WZMessageViewManager.shared.preload(with: messageData.mappingMessageView, with: cellHeight, maxHeight: collectionViewHeight)
   }
   
   public class func getCustomViewMaxWidth(with messageData: WZMessageData) -> CGFloat {
@@ -187,8 +173,7 @@ open class WZMessageContainerCell: UITableViewCell {
     timeView.isHidden = !isDisplayTime
     
     let height = isDisplayTime ? WZMessageContainerCell.timeViewHeight : 0
-    timeView.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: height)
- 
+    timeView.frame = CGRect(x: 0, y: 0, width: frame.width, height: height)
     timeLabel.frame = timeView.bounds
 
   }
@@ -257,11 +242,10 @@ open class WZMessageContainerCell: UITableViewCell {
   private func initContainerView() {
     
     timeView = UIView()
-    contentView.addSubview(timeView)
+    addSubview(timeView)
     
     messageContainerView = UIView()
-    contentView.addSubview(messageContainerView)
-    
+    addSubview(messageContainerView)
   }
   
   private func initAvatar() {
@@ -277,7 +261,7 @@ open class WZMessageContainerCell: UITableViewCell {
   
   private func initCustomView() {
     
-    customContentView = WZMessageViewManager.shared.fetch(with: contentViewType)
+    customContentView = WZMessageViewManager.shared.fetch(with: contentViewType as! WZMessageBaseView.Type)
     customContentView.messageCell = self
     customContentView.delegate = self
     messageContainerView.addSubview(customContentView)
@@ -294,8 +278,7 @@ open class WZMessageContainerCell: UITableViewCell {
   
   private func layoutMessageContainerView() {
     
-    let frame = CGRect(x: 0, y: timeView.frame.maxY, width: contentView.frame.width, height: contentView.frame.height - timeView.frame.height)
-    messageContainerView.frame = frame
+    messageContainerView.frame = CGRect(x: 0, y: timeView.frame.maxY, width: frame.width, height: frame.height - timeView.frame.height)
 
   }
   

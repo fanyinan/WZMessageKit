@@ -12,7 +12,6 @@ class WZMessageViewManager {
 
   static let shared = WZMessageViewManager()
   
-  private(set) var messageViewTypeDict: [String: WZMessageBaseView.Type] = [:]
   private var messageViewLoaderStack: [MessageViewLoader] = []
   
   private var currentMessageViewLoader: MessageViewLoader!
@@ -29,17 +28,6 @@ class WZMessageViewManager {
     messageViewLoaderStack.removeLast()
     currentMessageViewLoader = messageViewLoaderStack.last
     
-  }
-  
-  func messageViewType(typeIdentifier: String) -> WZMessageBaseView.Type {
-    
-    guard let cla = messageViewTypeDict[typeIdentifier] else {
-      let newCla = swiftClassFromString(typeIdentifier) as! WZMessageBaseView.Type
-      messageViewTypeDict[typeIdentifier] = newCla
-      return newCla
-    }
-    
-    return cla
   }
   
   func preload(with viewType: WZMessageBaseView.Type, with height: CGFloat, maxHeight: CGFloat) {

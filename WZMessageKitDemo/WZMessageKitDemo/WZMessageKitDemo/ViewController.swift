@@ -21,5 +21,9 @@ class ViewController: UIViewController {
   }
 
 
+  @IBAction func click() {
+    
+    navigationController?.pushViewController(MessageViewController(), animated: true)
+  }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572189C95E07D4EF867DD1B5 /* Pods_WZMessageKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */; };
 		CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */; };
 		CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */; };
 		CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */; };
@@ -30,9 +31,15 @@
 		CF2FAAB51EB8D14400E5DE67 /* WZMessageStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAA9F1EB8D14400E5DE67 /* WZMessageStatusView.swift */; };
 		CF2FAAB61EB8D14400E5DE67 /* WZMessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAAA01EB8D14400E5DE67 /* WZMessageTableView.swift */; };
 		CF2FAAB71EB8D14400E5DE67 /* WZMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FAAA21EB8D14400E5DE67 /* WZMessageViewController.swift */; };
+		CF4031531F7A11230097D8C8 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4031521F7A11230097D8C8 /* MessageViewController.swift */; };
+		CF4031551F7A123E0097D8C8 /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4031541F7A123E0097D8C8 /* TextMessage.swift */; };
+		CF4031571F7A127E0097D8C8 /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4031561F7A127E0097D8C8 /* TextMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		283BCE0FF4D7581C88F5BAB3 /* Pods-WZMessageKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZMessageKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZMessageKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DAB3B94DD3FFCDCC686D131 /* Pods-WZMessageKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZMessageKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CF2FA9841EB8BAE800E5DE67 /* WZMessageKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZMessageKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +65,9 @@
 		CF2FAA9F1EB8D14400E5DE67 /* WZMessageStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageStatusView.swift; sourceTree = "<group>"; };
 		CF2FAAA01EB8D14400E5DE67 /* WZMessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTableView.swift; sourceTree = "<group>"; };
 		CF2FAAA21EB8D14400E5DE67 /* WZMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageViewController.swift; sourceTree = "<group>"; };
+		CF4031521F7A11230097D8C8 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		CF4031541F7A123E0097D8C8 /* TextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessage.swift; sourceTree = "<group>"; };
+		CF4031561F7A127E0097D8C8 /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +75,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572189C95E07D4EF867DD1B5 /* Pods_WZMessageKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4CB7976E77796C4AA1E77D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				283BCE0FF4D7581C88F5BAB3 /* Pods-WZMessageKitDemo.debug.xcconfig */,
+				6DAB3B94DD3FFCDCC686D131 /* Pods-WZMessageKitDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1C8476DE09628E0C6277A12D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF2FA97B1EB8BAE800E5DE67 = {
 			isa = PBXGroup;
 			children = (
 				CF2FAA811EB8D14300E5DE67 /* WZMessageKit */,
 				CF2FA9861EB8BAE800E5DE67 /* WZMessageKitDemo */,
 				CF2FA9851EB8BAE800E5DE67 /* Products */,
+				0E4CB7976E77796C4AA1E77D /* Pods */,
+				1C8476DE09628E0C6277A12D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +123,9 @@
 			children = (
 				CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */,
 				CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */,
+				CF4031521F7A11230097D8C8 /* MessageViewController.swift */,
+				CF4031541F7A123E0097D8C8 /* TextMessage.swift */,
+				CF4031561F7A127E0097D8C8 /* TextMessageView.swift */,
 				CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */,
 				CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */,
 				CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */,
@@ -190,9 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2FA9961EB8BAE800E5DE67 /* Build configuration list for PBXNativeTarget "WZMessageKitDemo" */;
 			buildPhases = (
+				EF6B9CEE7002341438708A84 /* [CP] Check Pods Manifest.lock */,
 				CF2FA9801EB8BAE800E5DE67 /* Sources */,
 				CF2FA9811EB8BAE800E5DE67 /* Frameworks */,
 				CF2FA9821EB8BAE800E5DE67 /* Resources */,
+				F45F7DD87D9CE7DAEEA66033 /* [CP] Embed Pods Frameworks */,
+				6F8C6D1D469C31AF1542F9CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +289,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F8C6D1D469C31AF1542F9CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6B9CEE7002341438708A84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WZMessageKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F45F7DD87D9CE7DAEEA66033 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/WZReusableView/WZReusableView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WZReusableView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF2FA9801EB8BAE800E5DE67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -260,6 +350,7 @@
 			files = (
 				CF2FAAB41EB8D14400E5DE67 /* WZMessageInputView.swift in Sources */,
 				CF2FAAB61EB8D14400E5DE67 /* WZMessageTableView.swift in Sources */,
+				CF4031551F7A123E0097D8C8 /* TextMessage.swift in Sources */,
 				CF2FAAB71EB8D14400E5DE67 /* WZMessageViewController.swift in Sources */,
 				CF2FAAAE1EB8D14400E5DE67 /* WZMessageUtility.swift in Sources */,
 				CF2FAAA51EB8D14400E5DE67 /* WZMessageInputViewPopController.swift in Sources */,
@@ -268,10 +359,12 @@
 				CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */,
 				CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */,
 				CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */,
+				CF4031571F7A127E0097D8C8 /* TextMessageView.swift in Sources */,
 				CF2FAAA71EB8D14400E5DE67 /* WZMessageViewManager.swift in Sources */,
 				CF2FAAAA1EB8D14400E5DE67 /* DictArray.swift in Sources */,
 				CF2FAAB51EB8D14400E5DE67 /* WZMessageStatusView.swift in Sources */,
 				CF2FAAA31EB8D14400E5DE67 /* WZMessageContainerCell.swift in Sources */,
+				CF4031531F7A11230097D8C8 /* MessageViewController.swift in Sources */,
 				CF2FAAB11EB8D14400E5DE67 /* MessageLoadingView.swift in Sources */,
 				CF2FAAA81EB8D14400E5DE67 /* WZMessageData.swift in Sources */,
 				CF2FAAA61EB8D14400E5DE67 /* MessageViewLoader.swift in Sources */,
@@ -397,6 +490,7 @@
 		};
 		CF2FA9971EB8BAE800E5DE67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 283BCE0FF4D7581C88F5BAB3 /* Pods-WZMessageKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4RQRV7P524;
@@ -405,13 +499,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		CF2FA9981EB8BAE800E5DE67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB3B94DD3FFCDCC686D131 /* Pods-WZMessageKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4RQRV7P524;
@@ -420,7 +515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

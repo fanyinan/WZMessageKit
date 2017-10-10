@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WZReusableView
 
-public class WZMessageTableView: UITableView {
+public class WZMessageTableView: WZReusableView {
   
   private(set) var loadingView: MessageLoadingView!
   private let loadingViewHeight: CGFloat = 50
@@ -16,9 +17,8 @@ public class WZMessageTableView: UITableView {
   
   var isLoading = false
   
-  public init(frame: CGRect) {
-    super.init(frame: frame, style: .plain)
-    
+  public override init(frame: CGRect) {
+    super.init(frame: frame)
     setup()
   }
   
@@ -34,7 +34,6 @@ public class WZMessageTableView: UITableView {
   private func setup() {
     
     autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    separatorStyle = .none
     addLoadView()
   }
 
