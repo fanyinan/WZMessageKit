@@ -1,5 +1,5 @@
 PODS:
-  - WZReusableView (0.0.1)
+  - WZReusableView (0.0.2)
 
 DEPENDENCIES:
   - WZReusableView (from `/Users/fanyinan/Documents/MyGitHubProjects/WZReusableView`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: /Users/fanyinan/Documents/MyGitHubProjects/WZReusableView
 
 SPEC CHECKSUMS:
-  WZReusableView: eb6d50ce036060b622dd97945ce419947203ab57
+  WZReusableView: fc5341f720e3d6a5eb078c109dba3211078d899a
 
 PODFILE CHECKSUM: 6cc10c2c66b8d7996dc4952b718120aadefb401c
 
