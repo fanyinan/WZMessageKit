@@ -151,8 +151,11 @@ open class WZMessageViewController: UIViewController {
     
     inputView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
     view.addSubview(inputView)
-    
     view.bringSubview(toFront: inputView)
+    
+    if #available(iOS 11.0, *) {
+      inputView.frame.origin.y -= navigationController!.view.safeAreaInsets.bottom
+    }
     
     //管理messageInputView的弹出
     messageInputViewPopController = WZMessageInputViewPopController(delegate: self, inputView: inputView)

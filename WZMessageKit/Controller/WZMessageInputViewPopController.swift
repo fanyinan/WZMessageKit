@@ -46,7 +46,13 @@ class WZMessageInputViewPopController: NSObject {
     
     let originFrame = inputView.frame
     
-    let inputViewBottomMargin = isShow ? poppingViewHeight : 0
+    var bottomInset: CGFloat = 0
+    
+    if #available(iOS 11.0, *) {
+      bottomInset = inputView.superview!.safeAreaInsets.bottom
+    }
+    
+    let inputViewBottomMargin = isShow ? poppingViewHeight : bottomInset
     let inputViewY = inputView.superview!.frame.height - inputViewBottomMargin - inputView.frame.height
     
     UIView.animate(withDuration: duration, delay: 0, options: options, animations: { () -> Void in
