@@ -278,11 +278,12 @@ open class WZMessageViewController: UIViewController {
   
   private func initMessageTableView() {
     
+    var messageTableViewFrame = view.bounds
     if #available(iOS 11.0, *) {
-      messageTableView = WZMessageTableView(frame: navigationController!.view.safeAreaLayoutGuide.layoutFrame)
-    } else {
-      messageTableView = WZMessageTableView(frame: view.bounds)
+      messageTableViewFrame.size.height -= navigationController!.view.safeAreaInsets.bottom
     }
+    
+    messageTableView = WZMessageTableView(frame: messageTableViewFrame)
     
     messageTableView.backgroundColor = backgroundColor
     messageTableView.reusableViewDelegate = self
