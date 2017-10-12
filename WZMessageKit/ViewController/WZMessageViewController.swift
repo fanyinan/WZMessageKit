@@ -123,7 +123,15 @@ open class WZMessageViewController: UIViewController {
     if isScrollToBottom {
       scrollToBottomAnimated(isAnimated: true)
     }
+  }
+  
+  public func append(isScrollToBottom: Bool = true) {
     
+    messageTableView.append()
+    
+    if isScrollToBottom {
+      scrollToBottomAnimated(isAnimated: true)
+    }
   }
   
   public func reloadMessageData() {
