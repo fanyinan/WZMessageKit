@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WZMessageKit"
-  s.version      = "2.0.7"
+  s.version      = "2.1.0"
   s.summary      = "A message kit that is easy to expand"
 
   # This description is used to generate tags and improve search results.
@@ -136,6 +136,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency "WZReusableView", "0.1.1"
+  s.dependency "WZReusableView", "0.1.2"
   
 end

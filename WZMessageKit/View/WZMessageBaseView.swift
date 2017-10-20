@@ -12,22 +12,28 @@ public protocol WZMessageContentViewDelegate: NSObjectProtocol {
   func onCatchEvent(event: WZMessageEvent)
 }
 
-open class WZMessageBaseView: UIControl {
+open class WZMessageBaseView: UIView {
   
   public weak var messageCell: WZMessageContainerCell?
   public weak var messageViewController: WZMessageViewController?
   public weak var delegate: WZMessageContentViewDelegate?
   
   public var row: Int!
-  
+
   required public init() {
     super.init(frame: CGRect.zero)
     
     initView()
+    
   }
   
   required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  public func addTapGestureRecognizer() {
+   let tap = UITapGestureRecognizer(target: self, action: #selector(WZMessageBaseView.onClickMessage))
+    addGestureRecognizer(tap)
   }
   
   public class func getMaxWidth(with messageData: WZMessageData) -> CGFloat {
@@ -37,6 +43,8 @@ open class WZMessageBaseView: UIControl {
   open func initView() { }
   
   open func configContentView(with messageData: WZMessageData) {}
+  
+  @objc open func onClickMessage() {}
   
   open func messageViewWillDisplay() {}
   
