@@ -16,7 +16,6 @@ public class WZMessageBottomViewPoppingController: NSObject {
   
   public var poppingView: UIView?
   private var superView: UIView
-  //swift4
   private var popViews: [UIView] = []
   
   weak var delegate: WZMessageBottomViewPoppingControllerDelegate?

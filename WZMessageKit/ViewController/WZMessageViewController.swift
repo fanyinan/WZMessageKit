@@ -551,8 +551,7 @@ extension WZMessageViewController: WZReusableViewDelegate {
   
   public func reusableView(_ reusableView: WZReusableView, willDisplay cell: WZReusableCell, at index: Int) {
     
-    (cell as! WZMessageContainerCell).messageCellDidEndDisplay()
-    
+    (cell as! WZMessageContainerCell).messageCellWillDisplay()
   }
 
   public func reusableView(_ reusableView: WZReusableView, didEndDisplaying cell: WZReusableCell, at index: Int) {
@@ -561,8 +560,7 @@ extension WZMessageViewController: WZReusableViewDelegate {
       delegate?.messageViewController?(self, willDisplay: messageData)
     }
     
-    (cell as! WZMessageContainerCell).messageCellWillDisplay()
-    
+    (cell as! WZMessageContainerCell).messageCellDidEndDisplay()
   }
   
   public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
