@@ -1,9 +1,9 @@
 //
 //  Utility.swift
-//  Yuanfenba
+//  WZMessageKitDemo
 //
 //  Created by 范祎楠 on 16/7/4.
-//  Copyright © 2016年 Juxin. All rights reserved.
+//  Copyright © 2016年 fyn. All rights reserved.
 //
 
 import Foundation
