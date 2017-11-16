@@ -105,6 +105,8 @@ open class WZMessageViewController: UIViewController {
       guard let messageCell = cell as? WZMessageContainerCell else { return }
       messageCell.messageCellDidEndDisplay()
     }
+    
+    actionsPerformWhenEndScrollingAnimation.removeAll()
   }
   
   deinit {
