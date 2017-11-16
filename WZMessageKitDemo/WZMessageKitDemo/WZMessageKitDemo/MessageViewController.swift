@@ -1,5 +1,5 @@
 //
-//  MessageViewController.swift
+//  swift
 //  WZMessageKitDemo
 //
 //  Created by fanyinan on 2017/9/26.
@@ -11,7 +11,8 @@ import UIKit
 class MessageViewController: WZMessageViewController {
   
   var messageDataList: [WZMessageData] = []
-  
+  var inputViewContainer: WZMessageInputViewContainer!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -22,15 +23,10 @@ class MessageViewController: WZMessageViewController {
       messageDataList.append(TextMessage(text: "aaa"))
     }
     
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "test", style: .plain, target: self, action: #selector(MessageViewController.test))
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  @objc private func test() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "test", style: .plain, target: self, action: #selector(test))
+    
+    inputViewContainer = WZMessageInputViewContainer(delegate: self)
+    addInputView(inputView: inputViewContainer)
     
   }
 }
@@ -45,4 +41,61 @@ extension MessageViewController: WZMessageViewControllerDataSource, WZMessageVie
     return messageDataList[row]
   }
   
+}
+
+extension MessageViewController: WZMessageInputViewContainerDelegate {
+  
+  func inputViewContainer(_ inputViewContainer: WZMessageInputViewContainer, heightChanged increasedHeight: CGFloat) {
+    
+    messageTableView.changeTableViewInsets(bottomIncrement: increasedHeight, adjustIndicator: true)
+    scrollToBottomAnimated(isAnimated: false)
+    messageViewController(messageViewController, inputViewFrameChangeWithAnimation: inputViewContainer.frame)
+  }
+  
+  func onCatchInputViewEvent(event: WZMessageInputViewEvent) {
+    
+    switch event {
+    case .switchToAudio:
+      hideKeyboardAndBottomView()
+    case .switchToText:
+      showKeyboard()
+    case .textViewDidBeginEditing:
+      scrollToBottomAnimated(isAnimated: false)
+    case .textViewDidEndEditing:
+      hideKeyboardAndBottomView()
+    default:
+      break
+    }
+  }
+  
+  func audioInputViewDidStartRecordingAudioAction() {
+    
+    
+  }
+  
+  func audioInputViewDidFinishRecoingAudioAction() {
+    
+  }
+  
+  func audioInputViewDidCancelRecordingAudioAction() {
+    
+  }
+  
+  func audioInputViewDidDragEnterAction() {
+    
+  }
+  
+  func audioInputViewDidDragExitAction() {
+    
+  }
+  
+  func textInputView(_ textInputView: WZMessageTextInputView, didClickSendButtonWithText text: String) {
+    
+    guard !text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else { return }
+    
+    let textMessage = TextMessage(text: text)
+    textMessage.ownerType = .sender
+    messageDataList.append(textMessage)
+    append()
+  }
 }

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WZMessageTextInputView" customModule="Yuanfenba" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlD-uq-wIg">
+                    <rect key="frame" x="0.0" y="0.0" width="408" height="1"/>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="R0j-DD-xNa"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9et-xx-6cE">
+                    <rect key="frame" x="0.0" y="1" width="408" height="47"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-no-0sR">
+                            <rect key="frame" x="8" y="7" width="30" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="fmM-v9-DfF"/>
+                                <constraint firstAttribute="height" constant="30" id="hsN-7X-0co"/>
+                            </constraints>
+                            <state key="normal" image="msg_voice"/>
+                            <connections>
+                                <action selector="onClickSwitchButton" destination="iN0-l3-epB" eventType="touchUpInside" id="cKn-2F-kma"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6u6-OT-6vp">
+                            <rect key="frame" x="46" y="6" width="278" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="按下 说话">
+                                <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onDragEnterRecordButton" destination="iN0-l3-epB" eventType="touchDragEnter" id="BP1-LZ-X0L"/>
+                                <action selector="onDragExitRecordButton" destination="iN0-l3-epB" eventType="touchDragExit" id="bIe-sF-VRv"/>
+                                <action selector="onTouchDownRecordButton" destination="iN0-l3-epB" eventType="touchDown" id="uNh-tw-6ed"/>
+                                <action selector="onTouchUpInsideRecordButton" destination="iN0-l3-epB" eventType="touchUpInside" id="b9r-me-4yx"/>
+                                <action selector="onTouchUpOutsideRecordButton" destination="iN0-l3-epB" eventType="touchUpOutside" id="M1V-2w-kdL"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kkg-4y-425">
+                            <rect key="frame" x="46" y="6" width="278" height="35"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n7I-Cf-CmA" customClass="WZMessageTextView" customModule="Yuanfenba" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="3" width="278" height="29"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="iN0-l3-epB" id="zTf-Rf-8ci"/>
+                                    </connections>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="n7I-Cf-CmA" secondAttribute="trailing" id="MeU-0S-piL"/>
+                                <constraint firstItem="n7I-Cf-CmA" firstAttribute="leading" secondItem="Kkg-4y-425" secondAttribute="leading" id="Sh8-Lw-R0f"/>
+                                <constraint firstItem="n7I-Cf-CmA" firstAttribute="top" secondItem="Kkg-4y-425" secondAttribute="top" constant="3" id="Yzz-9d-cga"/>
+                                <constraint firstAttribute="bottom" secondItem="n7I-Cf-CmA" secondAttribute="bottom" constant="3" id="zpD-fT-Rr6"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="S2t-2w-SHU" appends="YES" id="97X-0B-OBf"/>
+                            </connections>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SR5-yP-Bei">
+                            <rect key="frame" x="370" y="7" width="30" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="HxH-u9-36n"/>
+                                <constraint firstAttribute="height" constant="30" id="cSt-Mt-vbu"/>
+                            </constraints>
+                            <state key="normal" image="msg_more"/>
+                            <connections>
+                                <action selector="onClickPlusButton" destination="iN0-l3-epB" eventType="touchUpInside" id="fdi-MK-gm3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tR-lr-7Uj">
+                            <rect key="frame" x="332" y="7" width="30" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="D4c-Gs-4wO"/>
+                                <constraint firstAttribute="width" constant="30" id="vIB-cJ-y0E"/>
+                            </constraints>
+                            <state key="normal" image="msg_emoji"/>
+                            <connections>
+                                <action selector="onClickEmojiButton" destination="iN0-l3-epB" eventType="touchUpInside" id="H4Z-1P-9BQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="SR5-yP-Bei" firstAttribute="leading" secondItem="5tR-lr-7Uj" secondAttribute="trailing" constant="8" id="8jv-fD-WPN"/>
+                        <constraint firstItem="Kkg-4y-425" firstAttribute="leading" secondItem="0u8-no-0sR" secondAttribute="trailing" constant="8" id="AVK-rP-uaN"/>
+                        <constraint firstItem="Kkg-4y-425" firstAttribute="top" secondItem="9et-xx-6cE" secondAttribute="top" constant="6" id="Bgf-FG-zOX"/>
+                        <constraint firstAttribute="bottom" secondItem="Kkg-4y-425" secondAttribute="bottom" constant="6" id="NiP-S1-y3R"/>
+                        <constraint firstAttribute="bottom" secondItem="0u8-no-0sR" secondAttribute="bottom" constant="10" id="QYx-Pe-gVs"/>
+                        <constraint firstItem="SR5-yP-Bei" firstAttribute="centerY" secondItem="5tR-lr-7Uj" secondAttribute="centerY" id="SbH-VF-NgN"/>
+                        <constraint firstItem="5tR-lr-7Uj" firstAttribute="leading" secondItem="6u6-OT-6vp" secondAttribute="trailing" constant="8" id="Xbv-Nc-Dui"/>
+                        <constraint firstItem="6u6-OT-6vp" firstAttribute="top" secondItem="9et-xx-6cE" secondAttribute="top" constant="6" id="igz-Ri-otT"/>
+                        <constraint firstItem="5tR-lr-7Uj" firstAttribute="leading" secondItem="Kkg-4y-425" secondAttribute="trailing" constant="8" id="oDx-xz-JOs"/>
+                        <constraint firstAttribute="bottom" secondItem="6u6-OT-6vp" secondAttribute="bottom" constant="6" id="p1Q-q9-cgU"/>
+                        <constraint firstItem="0u8-no-0sR" firstAttribute="leading" secondItem="9et-xx-6cE" secondAttribute="leading" constant="8" id="pWN-WU-QU8"/>
+                        <constraint firstItem="6u6-OT-6vp" firstAttribute="leading" secondItem="0u8-no-0sR" secondAttribute="trailing" constant="8" id="sAC-Wf-iXT"/>
+                        <constraint firstItem="5tR-lr-7Uj" firstAttribute="centerY" secondItem="0u8-no-0sR" secondAttribute="centerY" id="tVe-O1-JBc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9et-xx-6cE" secondAttribute="trailing" id="2Px-jl-Tjd"/>
+                <constraint firstItem="DlD-uq-wIg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="51e-jI-RXj"/>
+                <constraint firstAttribute="trailing" secondItem="DlD-uq-wIg" secondAttribute="trailing" id="aCU-HZ-5Uj"/>
+                <constraint firstItem="DlD-uq-wIg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fgR-92-GPu"/>
+                <constraint firstItem="9et-xx-6cE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kcr-DP-Tnh"/>
+                <constraint firstAttribute="trailing" secondItem="SR5-yP-Bei" secondAttribute="trailing" constant="8" id="o6t-YV-BQH"/>
+                <constraint firstAttribute="bottom" secondItem="9et-xx-6cE" secondAttribute="bottom" id="uq6-r6-Ldv"/>
+                <constraint firstItem="9et-xx-6cE" firstAttribute="top" secondItem="DlD-uq-wIg" secondAttribute="bottom" id="ux3-Pr-b3F"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="recordButton" destination="6u6-OT-6vp" id="U51-oL-4go"/>
+                <outlet property="separatorHeightConstraint" destination="R0j-DD-xNa" id="oKQ-p2-GqS"/>
+                <outlet property="switchButton" destination="0u8-no-0sR" id="gHP-kA-184"/>
+                <outlet property="textView" destination="n7I-Cf-CmA" id="A24-SI-TuW"/>
+                <outlet property="textViewBottomMarginConstraint" destination="zpD-fT-Rr6" id="6Lv-qm-QCh"/>
+                <outlet property="textViewContainerBottomMarginConstraint" destination="NiP-S1-y3R" id="sKR-SU-q1j"/>
+                <outlet property="textViewContainerTopMarginConstraint" destination="Bgf-FG-zOX" id="o3D-VC-upv"/>
+                <outlet property="textViewContainerView" destination="Kkg-4y-425" id="mya-4c-VHM"/>
+                <outlet property="textViewTopMarginConstraint" destination="Yzz-9d-cga" id="IGL-Py-hL6"/>
+            </connections>
+            <point key="canvasLocation" x="497" y="291"/>
+        </view>
+        <tapGestureRecognizer id="S2t-2w-SHU">
+            <connections>
+                <action selector="onClickTextViewContainerView" destination="iN0-l3-epB" id="ZUV-fj-wWh"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="msg_emoji" width="114" height="114"/>
+        <image name="msg_more" width="114" height="114"/>
+        <image name="msg_voice" width="114" height="114"/>
+    </resources>
+</document>

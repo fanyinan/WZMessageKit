@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		572189C95E07D4EF867DD1B5 /* Pods_WZMessageKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */; };
+		CF2C7C5E1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C7C5A1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift */; };
+		CF2C7C5F1FA2BEF50001FC91 /* WZMessageTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C7C5B1FA2BEF50001FC91 /* WZMessageTextInputView.swift */; };
+		CF2C7C601FA2BEF50001FC91 /* WZMessageTextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2C7C5C1FA2BEF50001FC91 /* WZMessageTextInputView.xib */; };
 		CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */; };
 		CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */; };
 		CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */; };
@@ -36,10 +39,26 @@
 		CF4031571F7A127E0097D8C8 /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4031561F7A127E0097D8C8 /* TextMessageView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CF39E9351FAC9233002F4FDB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		283BCE0FF4D7581C88F5BAB3 /* Pods-WZMessageKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZMessageKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZMessageKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAB3B94DD3FFCDCC686D131 /* Pods-WZMessageKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZMessageKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CF2C7C5A1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputViewContainer.swift; sourceTree = "<group>"; };
+		CF2C7C5B1FA2BEF50001FC91 /* WZMessageTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTextInputView.swift; sourceTree = "<group>"; };
+		CF2C7C5C1FA2BEF50001FC91 /* WZMessageTextInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZMessageTextInputView.xib; sourceTree = "<group>"; };
 		CF2FA9841EB8BAE800E5DE67 /* WZMessageKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZMessageKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +118,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF2C7C591FA2BEF50001FC91 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				CF2C7C5A1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift */,
+				CF2C7C5B1FA2BEF50001FC91 /* WZMessageTextInputView.swift */,
+				CF2C7C5C1FA2BEF50001FC91 /* WZMessageTextInputView.xib */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
 		CF2FA97B1EB8BAE800E5DE67 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +150,7 @@
 		CF2FA9861EB8BAE800E5DE67 /* WZMessageKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CF2C7C591FA2BEF50001FC91 /* InputView */,
 				CF2FA9871EB8BAE800E5DE67 /* AppDelegate.swift */,
 				CF2FA9891EB8BAE800E5DE67 /* ViewController.swift */,
 				CF4031521F7A11230097D8C8 /* MessageViewController.swift */,
@@ -229,6 +259,7 @@
 				CF2FA9821EB8BAE800E5DE67 /* Resources */,
 				F45F7DD87D9CE7DAEEA66033 /* [CP] Embed Pods Frameworks */,
 				6F8C6D1D469C31AF1542F9CB /* [CP] Copy Pods Resources */,
+				CF39E9351FAC9233002F4FDB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -245,7 +276,7 @@
 		CF2FA97C1EB8BAE800E5DE67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = fyn;
 				TargetAttributes = {
@@ -283,6 +314,7 @@
 				CF2FA9921EB8BAE800E5DE67 /* LaunchScreen.storyboard in Resources */,
 				CF2FAAB21EB8D14400E5DE67 /* MessageLoadingView.xib in Resources */,
 				CF2FA98F1EB8BAE800E5DE67 /* Assets.xcassets in Resources */,
+				CF2C7C601FA2BEF50001FC91 /* WZMessageTextInputView.xib in Resources */,
 				CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,10 +363,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/WZReusableView/WZReusableView.framework",
+				"${BUILT_PRODUCTS_DIR}/WZRichTextView/WZRichTextView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WZReusableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WZRichTextView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -353,11 +387,13 @@
 				CF4031551F7A123E0097D8C8 /* TextMessage.swift in Sources */,
 				CF2FAAB71EB8D14400E5DE67 /* WZMessageViewController.swift in Sources */,
 				CF2FAAAE1EB8D14400E5DE67 /* WZMessageUtility.swift in Sources */,
+				CF2C7C5F1FA2BEF50001FC91 /* WZMessageTextInputView.swift in Sources */,
 				CF2FAAA51EB8D14400E5DE67 /* WZMessageInputViewPopController.swift in Sources */,
 				CF2FAAA41EB8D14400E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */,
 				CF2FAAB31EB8D14400E5DE67 /* WZMessageBaseView.swift in Sources */,
 				CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */,
 				CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */,
+				CF2C7C5E1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift in Sources */,
 				CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */,
 				CF4031571F7A127E0097D8C8 /* TextMessageView.swift in Sources */,
 				CF2FAAA71EB8D14400E5DE67 /* WZMessageViewManager.swift in Sources */,
@@ -492,7 +528,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 283BCE0FF4D7581C88F5BAB3 /* Pods-WZMessageKitDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4RQRV7P524;
 				INFOPLIST_FILE = WZMessageKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -508,7 +546,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DAB3B94DD3FFCDCC686D131 /* Pods-WZMessageKitDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4RQRV7P524;
 				INFOPLIST_FILE = WZMessageKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
