@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		572189C95E07D4EF867DD1B5 /* Pods_WZMessageKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */; };
+		CF06CB411FD2429C0017210A /* WZBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB3F1FD2429B0017210A /* WZBubbleView.swift */; };
+		CF06CB421FD2429C0017210A /* WZBubbleInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB401FD2429C0017210A /* WZBubbleInsets.swift */; };
+		CF06CB441FD2437D0017210A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB431FD2437D0017210A /* Extension.swift */; };
+		CF06CB4B1FD243AF0017210A /* POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB481FD243AF0017210A /* POViewFrameBuilder.m */; };
+		CF06CB4C1FD243AF0017210A /* UIView+POViewFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB4A1FD243AF0017210A /* UIView+POViewFrameBuilder.m */; };
+		CF06CB581FD246B30017210A /* WZMessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB571FD246B20017210A /* WZMessageTextView.swift */; };
+		CF06CB5C1FD249410017210A /* MessageMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF06CB591FD249400017210A /* MessageMenuCell.xib */; };
+		CF06CB5D1FD249410017210A /* WZMessageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB5A1FD249400017210A /* WZMessageMenuView.swift */; };
+		CF06CB5E1FD249410017210A /* MessageMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB5B1FD249400017210A /* MessageMenuCell.swift */; };
+		CF06CB601FD24D540017210A /* WebImageTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB5F1FD24D540017210A /* WebImageTools.swift */; };
+		CF06CB621FD24E0D0017210A /* ImageMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB611FD24E0C0017210A /* ImageMessageView.swift */; };
+		CF06CB641FD24E180017210A /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB631FD24E180017210A /* ImageMessage.swift */; };
+		CF06CB661FD24EC90017210A /* WZMessageCellTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB651FD24EC80017210A /* WZMessageCellTools.swift */; };
+		CF06CB681FD24EFE0017210A /* WZCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06CB671FD24EFE0017210A /* WZCacheManager.swift */; };
 		CF2C7C5E1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C7C5A1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift */; };
 		CF2C7C5F1FA2BEF50001FC91 /* WZMessageTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2C7C5B1FA2BEF50001FC91 /* WZMessageTextInputView.swift */; };
 		CF2C7C601FA2BEF50001FC91 /* WZMessageTextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2C7C5C1FA2BEF50001FC91 /* WZMessageTextInputView.xib */; };
@@ -56,6 +70,24 @@
 		283BCE0FF4D7581C88F5BAB3 /* Pods-WZMessageKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZMessageKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2A3DF2B978FED87A3ACD8EC0 /* Pods_WZMessageKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WZMessageKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAB3B94DD3FFCDCC686D131 /* Pods-WZMessageKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZMessageKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CF06CB3F1FD2429B0017210A /* WZBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZBubbleView.swift; sourceTree = "<group>"; };
+		CF06CB401FD2429C0017210A /* WZBubbleInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZBubbleInsets.swift; sourceTree = "<group>"; };
+		CF06CB431FD2437D0017210A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CF06CB461FD243AF0017210A /* POGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POGeometry.h; sourceTree = "<group>"; };
+		CF06CB471FD243AF0017210A /* POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POViewFrameBuilder.h; sourceTree = "<group>"; };
+		CF06CB481FD243AF0017210A /* POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POViewFrameBuilder.m; sourceTree = "<group>"; };
+		CF06CB491FD243AF0017210A /* UIView+POViewFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+POViewFrameBuilder.h"; sourceTree = "<group>"; };
+		CF06CB4A1FD243AF0017210A /* UIView+POViewFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+POViewFrameBuilder.m"; sourceTree = "<group>"; };
+		CF06CB561FD244900017210A /* WZMessageKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WZMessageKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF06CB571FD246B20017210A /* WZMessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTextView.swift; sourceTree = "<group>"; };
+		CF06CB591FD249400017210A /* MessageMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageMenuCell.xib; sourceTree = "<group>"; };
+		CF06CB5A1FD249400017210A /* WZMessageMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageMenuView.swift; sourceTree = "<group>"; };
+		CF06CB5B1FD249400017210A /* MessageMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageMenuCell.swift; sourceTree = "<group>"; };
+		CF06CB5F1FD24D540017210A /* WebImageTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageTools.swift; sourceTree = "<group>"; };
+		CF06CB611FD24E0C0017210A /* ImageMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMessageView.swift; sourceTree = "<group>"; };
+		CF06CB631FD24E180017210A /* ImageMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
+		CF06CB651FD24EC80017210A /* WZMessageCellTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageCellTools.swift; sourceTree = "<group>"; };
+		CF06CB671FD24EFE0017210A /* WZCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZCacheManager.swift; sourceTree = "<group>"; };
 		CF2C7C5A1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageInputViewContainer.swift; sourceTree = "<group>"; };
 		CF2C7C5B1FA2BEF50001FC91 /* WZMessageTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WZMessageTextInputView.swift; sourceTree = "<group>"; };
 		CF2C7C5C1FA2BEF50001FC91 /* WZMessageTextInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZMessageTextInputView.xib; sourceTree = "<group>"; };
@@ -118,12 +150,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF06CB451FD243AF0017210A /* POViewFrameBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CF06CB461FD243AF0017210A /* POGeometry.h */,
+				CF06CB471FD243AF0017210A /* POViewFrameBuilder.h */,
+				CF06CB481FD243AF0017210A /* POViewFrameBuilder.m */,
+				CF06CB491FD243AF0017210A /* UIView+POViewFrameBuilder.h */,
+				CF06CB4A1FD243AF0017210A /* UIView+POViewFrameBuilder.m */,
+			);
+			path = POViewFrameBuilder;
+			sourceTree = "<group>";
+		};
 		CF2C7C591FA2BEF50001FC91 /* InputView */ = {
 			isa = PBXGroup;
 			children = (
 				CF2C7C5A1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift */,
 				CF2C7C5B1FA2BEF50001FC91 /* WZMessageTextInputView.swift */,
 				CF2C7C5C1FA2BEF50001FC91 /* WZMessageTextInputView.xib */,
+				CF06CB571FD246B20017210A /* WZMessageTextView.swift */,
 			);
 			path = InputView;
 			sourceTree = "<group>";
@@ -132,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2FAA811EB8D14300E5DE67 /* WZMessageKit */,
+				CF06CB451FD243AF0017210A /* POViewFrameBuilder */,
 				CF2FA9861EB8BAE800E5DE67 /* WZMessageKitDemo */,
 				CF2FA9851EB8BAE800E5DE67 /* Products */,
 				0E4CB7976E77796C4AA1E77D /* Pods */,
@@ -156,7 +202,19 @@
 				CF4031521F7A11230097D8C8 /* MessageViewController.swift */,
 				CF4031541F7A123E0097D8C8 /* TextMessage.swift */,
 				CF4031561F7A127E0097D8C8 /* TextMessageView.swift */,
+				CF06CB611FD24E0C0017210A /* ImageMessageView.swift */,
+				CF06CB631FD24E180017210A /* ImageMessage.swift */,
+				CF06CB401FD2429C0017210A /* WZBubbleInsets.swift */,
+				CF06CB3F1FD2429B0017210A /* WZBubbleView.swift */,
+				CF06CB5B1FD249400017210A /* MessageMenuCell.swift */,
+				CF06CB591FD249400017210A /* MessageMenuCell.xib */,
+				CF06CB5A1FD249400017210A /* WZMessageMenuView.swift */,
+				CF06CB5F1FD24D540017210A /* WebImageTools.swift */,
+				CF06CB651FD24EC80017210A /* WZMessageCellTools.swift */,
+				CF06CB671FD24EFE0017210A /* WZCacheManager.swift */,
+				CF06CB431FD2437D0017210A /* Extension.swift */,
 				CF2FA98B1EB8BAE800E5DE67 /* Main.storyboard */,
+				CF06CB561FD244900017210A /* WZMessageKitDemo-Bridging-Header.h */,
 				CF2FA98E1EB8BAE800E5DE67 /* Assets.xcassets */,
 				CF2FA9901EB8BAE800E5DE67 /* LaunchScreen.storyboard */,
 				CF2FA9931EB8BAE800E5DE67 /* Info.plist */,
@@ -315,6 +373,7 @@
 				CF2FAAB21EB8D14400E5DE67 /* MessageLoadingView.xib in Resources */,
 				CF2FA98F1EB8BAE800E5DE67 /* Assets.xcassets in Resources */,
 				CF2C7C601FA2BEF50001FC91 /* WZMessageTextInputView.xib in Resources */,
+				CF06CB5C1FD249410017210A /* MessageMenuCell.xib in Resources */,
 				CF2FA98D1EB8BAE800E5DE67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,11 +421,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/WZImagePicker/WZImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/WZReusableView/WZReusableView.framework",
 				"${BUILT_PRODUCTS_DIR}/WZRichTextView/WZRichTextView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WZImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WZReusableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WZRichTextView.framework",
 			);
@@ -385,26 +450,39 @@
 				CF2FAAB41EB8D14400E5DE67 /* WZMessageInputView.swift in Sources */,
 				CF2FAAB61EB8D14400E5DE67 /* WZMessageTableView.swift in Sources */,
 				CF4031551F7A123E0097D8C8 /* TextMessage.swift in Sources */,
+				CF06CB4B1FD243AF0017210A /* POViewFrameBuilder.m in Sources */,
 				CF2FAAB71EB8D14400E5DE67 /* WZMessageViewController.swift in Sources */,
 				CF2FAAAE1EB8D14400E5DE67 /* WZMessageUtility.swift in Sources */,
 				CF2C7C5F1FA2BEF50001FC91 /* WZMessageTextInputView.swift in Sources */,
 				CF2FAAA51EB8D14400E5DE67 /* WZMessageInputViewPopController.swift in Sources */,
 				CF2FAAA41EB8D14400E5DE67 /* WZMessageBottomViewPoppingController.swift in Sources */,
 				CF2FAAB31EB8D14400E5DE67 /* WZMessageBaseView.swift in Sources */,
+				CF06CB641FD24E180017210A /* ImageMessage.swift in Sources */,
+				CF06CB5E1FD249410017210A /* MessageMenuCell.swift in Sources */,
 				CF2FA98A1EB8BAE800E5DE67 /* ViewController.swift in Sources */,
 				CF2FAAAC1EB8D14400E5DE67 /* UIColor+extension.swift in Sources */,
 				CF2C7C5E1FA2BEF50001FC91 /* WZMessageInputViewContainer.swift in Sources */,
 				CF2FA9881EB8BAE800E5DE67 /* AppDelegate.swift in Sources */,
 				CF4031571F7A127E0097D8C8 /* TextMessageView.swift in Sources */,
+				CF06CB411FD2429C0017210A /* WZBubbleView.swift in Sources */,
+				CF06CB661FD24EC90017210A /* WZMessageCellTools.swift in Sources */,
+				CF06CB601FD24D540017210A /* WebImageTools.swift in Sources */,
 				CF2FAAA71EB8D14400E5DE67 /* WZMessageViewManager.swift in Sources */,
 				CF2FAAAA1EB8D14400E5DE67 /* DictArray.swift in Sources */,
 				CF2FAAB51EB8D14400E5DE67 /* WZMessageStatusView.swift in Sources */,
+				CF06CB441FD2437D0017210A /* Extension.swift in Sources */,
+				CF06CB581FD246B30017210A /* WZMessageTextView.swift in Sources */,
 				CF2FAAA31EB8D14400E5DE67 /* WZMessageContainerCell.swift in Sources */,
 				CF4031531F7A11230097D8C8 /* MessageViewController.swift in Sources */,
+				CF06CB5D1FD249410017210A /* WZMessageMenuView.swift in Sources */,
 				CF2FAAB11EB8D14400E5DE67 /* MessageLoadingView.swift in Sources */,
 				CF2FAAA81EB8D14400E5DE67 /* WZMessageData.swift in Sources */,
+				CF06CB681FD24EFE0017210A /* WZCacheManager.swift in Sources */,
+				CF06CB421FD2429C0017210A /* WZBubbleInsets.swift in Sources */,
 				CF2FAAA61EB8D14400E5DE67 /* MessageViewLoader.swift in Sources */,
 				CF2FAAA91EB8D14400E5DE67 /* WZMessageEvent.swift in Sources */,
+				CF06CB4C1FD243AF0017210A /* UIView+POViewFrameBuilder.m in Sources */,
+				CF06CB621FD24E0D0017210A /* ImageMessageView.swift in Sources */,
 				CF2FAAAB1EB8D14400E5DE67 /* KeyBoardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,7 +614,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -554,7 +632,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fyn.WZMessageKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

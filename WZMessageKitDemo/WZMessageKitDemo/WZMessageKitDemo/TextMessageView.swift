@@ -19,7 +19,7 @@ class RichTextMessageView: WZMessageBaseView {
   static let textViewMarginInVertical: CGFloat = 12
   static let containerViewWidthRatio: CGFloat = 0.8
   static var interprets: [Interpreter] {
-    return [EmoticonInterpreter(), URLInterpreter()]
+    return []
   }
   
   override func initView() {
@@ -93,7 +93,7 @@ class RichTextMessageView: WZMessageBaseView {
   private static func createRichTextStyle(textMessage: TextMessage) -> WZTextStyle {
     
     let textStyle = WZTextStyle()
-    textStyle.textColor = textMessage.ownerType == .sender ? UIColor.white : messageTextColor
+    textStyle.textColor = textMessage.ownerType == .sender ? UIColor.white : #colorLiteral(red: 0.4666666667, green: 0.4666666667, blue: 0.4666666667, alpha: 1)
     textStyle.font = UIFont.systemFont(ofSize: 15)
     textStyle.backgroundColor = UIColor.clear
     

@@ -6,5 +6,7 @@ target 'WZMessageKitDemo' do
 #  pod 'WZReusableView', :path =>'/Users/fanyinan/Documents/MyGitHubProjects/WZReusableView'
   pod 'WZReusableView', :git => 'https://github.com/fanyinan/WZReusableView'
   pod 'WZRichTextView', :git => 'https://github.com/fanyinan/RichTextView-Swift-3.0'
+  pod 'WZImagePicker', :git => 'https://github.com/fanyinan/ImagePickerProject.git'
+  pod 'SDWebImage', '4.2.2'
 
 end

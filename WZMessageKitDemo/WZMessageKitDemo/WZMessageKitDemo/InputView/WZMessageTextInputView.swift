@@ -52,8 +52,7 @@ class WZMessageTextInputView: UIView {
   
   func didClickSendButton() {
     
-    inputViewContainer?.delegate?.textInputView(self, didClickSendButtonWithText: textView.emoticonFormatText)
-    textView.clear()
+    inputViewContainer?.delegate?.textInputView(self, didClickSendButtonWithText: textView.text)
     
   }
   
@@ -122,21 +121,21 @@ class WZMessageTextInputView: UIView {
     guard audioRecordStatus == .stop else { return }
     audioRecordStatus = .recording
     inputViewContainer?.delegate?.audioInputViewDidStartRecordingAudioAction()
-    recordButton.backgroundColor = .jx_recordAudioButtonDown
+    recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     recordButton.setTitle("松开 结束", for: UIControlState())
   }
   
   @IBAction func onTouchUpInsideRecordButton() {
     guard audioRecordStatus == .recording else { return }
     inputViewContainer?.delegate?.audioInputViewDidFinishRecoingAudioAction()
-    recordButton.backgroundColor = .jx_recordAudioButton
+    recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     recordButton.setTitle("按住 说话", for: UIControlState())
   }
   
   @IBAction func onTouchUpOutsideRecordButton() {
     guard audioRecordStatus == .canceling else { return }
     inputViewContainer?.delegate?.audioInputViewDidCancelRecordingAudioAction()
-    recordButton.backgroundColor = .jx_recordAudioButton
+    recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     recordButton.setTitle("按住 说话", for: UIControlState())
   }
   
@@ -178,12 +177,12 @@ class WZMessageTextInputView: UIView {
     textView.addObserver(self, forKeyPath: "contentSize", options: [.new, .old], context: nil)
     backgroundColor = UIColor.white
     textView.backgroundColor = UIColor.white
-    textViewContainerView.jx_setBorder(0.5, color: separatorColor)
-    textViewContainerView.jx_setViewCornerRadius(3)
+    textViewContainerView.wz_setBorder(0.5, color: #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1))
+    textViewContainerView.wz_setViewCornerRadius(3)
     
-    recordButton.backgroundColor = .jx_recordAudioButton
-    recordButton.jx_setBorder(0.5, color: separatorColor)
-    recordButton.jx_setViewCornerRadius(3)
+    recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    recordButton.wz_setBorder(0.5, color: #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1))
+    recordButton.wz_setViewCornerRadius(3)
     
   }
 
@@ -282,11 +281,6 @@ extension WZMessageTextInputView: UITextViewDelegate {
       return false
     }
     
-    if text.isEmpty {
-      self.textView.adjustEmoticonInfoWhenDeleteContent(in: range)
-    } else {
-      self.textView.adjustEmoticonInfoWhenInsertContent(in: NSRange(location: range.location, length: text.characters.count))
-    }
     return true
   }
   

@@ -34,5 +34,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+  <key>NSCameraUsageDescription</key>
+  <string>请允许获取您的相机权限，让世界看到不一样的你</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>请允许获取您的麦克风权限，可以更轻松的与好友沟通</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>请允许获取您的相册权限，更加完善您的资料</string>
 </dict>
 </plist>

@@ -47,16 +47,6 @@ class WZMessageInputViewContainer: WZMessageInputView {
     }
   }
   
-  var overrideNextResponder: UIResponder? {
-    get {
-      return textInputView.textView.overrideNextResponder
-    }
-    
-    set{
-      textInputView.textView.overrideNextResponder = newValue
-    }
-  }
-  
   init(delegate: WZMessageInputViewContainerDelegate) {
     
     self.delegate = delegate
