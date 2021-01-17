@@ -35,10 +35,10 @@ open class WZMessageContainerCell: WZReusableCell {
     }
   }
   
-  open static let timeViewHeight: CGFloat = 40
-  open static let contentMargin: CGFloat = 10
-  open static let avatarSideLength: CGFloat = 45
-  open static let statusViewMargin: CGFloat = 5
+    public static let timeViewHeight: CGFloat = 40
+    public static let contentMargin: CGFloat = 10
+    public static let avatarSideLength: CGFloat = 45
+    public static let statusViewMargin: CGFloat = 5
   
   fileprivate(set) var messageData: WZMessageData!
   fileprivate(set) var isDisplayTime: Bool = true

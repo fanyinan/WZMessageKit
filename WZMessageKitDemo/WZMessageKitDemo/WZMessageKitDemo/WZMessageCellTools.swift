@@ -31,9 +31,9 @@ class WZMessageCellTools {
     
     let maxSize = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
     
-    let textWidthInOneline = (text as NSString).size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: fontSize)]).width
+    let textWidthInOneline = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]).width
     
-    let textSize = (text as NSString).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: fontSize)], context: nil).size
+    let textSize = (text as NSString).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)], context: nil).size
     
     let finalSize = CGSize(width: textWidthInOneline > textSize.width ? textSize.width : textWidthInOneline, height: textSize.height)
     

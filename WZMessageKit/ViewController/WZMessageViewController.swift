@@ -161,7 +161,7 @@ open class WZMessageViewController: UIViewController {
     
     inputView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
     view.addSubview(inputView)
-    view.bringSubview(toFront: inputView)
+    view.bringSubviewToFront(inputView)
     
     if #available(iOS 11.0, *) {
       inputView.frame.origin.y -= navigationController!.view.safeAreaInsets.bottom
@@ -300,7 +300,7 @@ open class WZMessageViewController: UIViewController {
     messageTableView.dataSource = self
     messageTableView.register(cellClass: messageContainerCellClass)
     view.addSubview(messageTableView)
-    view.sendSubview(toBack: messageTableView)
+    view.sendSubviewToBack(messageTableView)
 
     let tap = UITapGestureRecognizer(target: self, action: #selector(WZMessageViewController.onClickTableView))
     tap.cancelsTouchesInView = false

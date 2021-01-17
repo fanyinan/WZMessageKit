@@ -69,7 +69,7 @@ public class WebImageTools {
       
       if let clipedImageForThumb = image.wz_scaleImageWithoutCliped(to: ImageMessageView.thumbImageMaxSize) {
         
-        if let imageData = UIImageJPEGRepresentation(clipedImageForThumb, 1) {
+        if let imageData = clipedImageForThumb.jpegData(compressionQuality: 1) {
           
           SDImageCache.shared().storeImageData(toDisk: imageData, forKey: thumbKey)
           
@@ -79,7 +79,7 @@ public class WebImageTools {
     
     if let clipedImage = image.wz_scaleImageWithoutCliped(to: WebImageTools.imageMaxSize) {
       
-      if let imageData = UIImageJPEGRepresentation(clipedImage, 1) {
+        if let imageData = clipedImage.jpegData(compressionQuality: 1) {
         SDImageCache.shared().storeImageData(toDisk: imageData, forKey: key)
       }
     }

@@ -316,7 +316,6 @@
 				CF2FA9811EB8BAE800E5DE67 /* Frameworks */,
 				CF2FA9821EB8BAE800E5DE67 /* Resources */,
 				F45F7DD87D9CE7DAEEA66033 /* [CP] Embed Pods Frameworks */,
-				6F8C6D1D469C31AF1542F9CB /* [CP] Copy Pods Resources */,
 				CF39E9351FAC9233002F4FDB /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -351,6 +350,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -381,21 +381,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F8C6D1D469C31AF1542F9CB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EF6B9CEE7002341438708A84 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -420,7 +405,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WZImagePicker/WZImagePicker.framework",
@@ -437,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WZMessageKitDemo/Pods-WZMessageKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -616,7 +601,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -634,7 +619,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WZMessageKitDemo/WZMessageKitDemo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

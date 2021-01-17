@@ -14,6 +14,11 @@ DEPENDENCIES:
   - WZReusableView (from `https://github.com/fanyinan/WZReusableView`)
   - WZRichTextView (from `https://github.com/fanyinan/RichTextView-Swift-3.0`)
 
+SPEC REPOS:
+  trunk:
+    - SDWebImage
+    - SnapKit
+
 EXTERNAL SOURCES:
   WZImagePicker:
     :git: https://github.com/fanyinan/ImagePickerProject.git
@@ -42,4 +47,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8528c81fde93f5f31957495cded25a6d72b3d3c9
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.9.3

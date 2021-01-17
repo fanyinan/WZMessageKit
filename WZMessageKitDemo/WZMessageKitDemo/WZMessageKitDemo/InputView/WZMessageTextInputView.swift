@@ -122,35 +122,35 @@ class WZMessageTextInputView: UIView {
     audioRecordStatus = .recording
     inputViewContainer?.delegate?.audioInputViewDidStartRecordingAudioAction()
     recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    recordButton.setTitle("松开 结束", for: UIControlState())
+    recordButton.setTitle("松开 结束", for: .normal)
   }
   
   @IBAction func onTouchUpInsideRecordButton() {
     guard audioRecordStatus == .recording else { return }
     inputViewContainer?.delegate?.audioInputViewDidFinishRecoingAudioAction()
     recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    recordButton.setTitle("按住 说话", for: UIControlState())
+    recordButton.setTitle("按住 说话", for: .normal)
   }
   
   @IBAction func onTouchUpOutsideRecordButton() {
     guard audioRecordStatus == .canceling else { return }
     inputViewContainer?.delegate?.audioInputViewDidCancelRecordingAudioAction()
     recordButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    recordButton.setTitle("按住 说话", for: UIControlState())
+    recordButton.setTitle("按住 说话", for: .normal)
   }
   
   @IBAction func onDragEnterRecordButton() {
     guard audioRecordStatus == .canceling else { return }
     audioRecordStatus = .recording
     inputViewContainer?.delegate?.audioInputViewDidDragEnterAction()
-    recordButton.setTitle("松开 结束", for: UIControlState())
+    recordButton.setTitle("松开 结束", for: .normal)
   }
   
   @IBAction func onDragExitRecordButton() {
     guard audioRecordStatus == .recording else { return }
     audioRecordStatus = .canceling
     inputViewContainer?.delegate?.audioInputViewDidDragExitAction()
-    recordButton.setTitle("松开 结束", for: UIControlState())
+    recordButton.setTitle("松开 结束", for: .normal)
   }
   
   override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

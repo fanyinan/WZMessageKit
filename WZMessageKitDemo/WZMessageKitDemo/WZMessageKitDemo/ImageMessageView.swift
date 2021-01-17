@@ -87,7 +87,7 @@ class ImageMessageView: WZMessageBaseView {
     addSubview(messageImageView)
     messageImageView.backgroundColor = UIColor.clear
     
-    loadingView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    loadingView = UIActivityIndicatorView(style: .gray)
     loadingView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 20, height: 20))
     addSubview(loadingView)
     

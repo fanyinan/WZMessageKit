@@ -39,7 +39,7 @@ class WZMessageInputViewPopController: NSObject {
     keyboardController.addObserverForKeyBoard()
   }
   
-  func animateInputViewWith(duration: TimeInterval, options: UIViewAnimationOptions, poppingViewHeight: CGFloat, isShow: Bool) {
+    func animateInputViewWith(duration: TimeInterval, options: UIView.AnimationOptions, poppingViewHeight: CGFloat, isShow: Bool) {
     
     //需要在viewwillappear之后完成，因为需要得到messageInputViewContainer在navigationbar存在时的frame
     //并且只会被设置一次
@@ -67,7 +67,7 @@ class WZMessageInputViewPopController: NSObject {
 
 extension WZMessageInputViewPopController: KeyBoardDelegate {
   
-  func keyboardWillChange(_ keyboardFrame: CGRect, animationDuration: Double, animationOptions: UIViewAnimationOptions, isShow: Bool) {
+    func keyboardWillChange(_ keyboardFrame: CGRect, animationDuration: Double, animationOptions: UIView.AnimationOptions, isShow: Bool) {
     
     guard enable else { return }
     
@@ -77,7 +77,7 @@ extension WZMessageInputViewPopController: KeyBoardDelegate {
 
 extension WZMessageInputViewPopController: WZMessageBottomViewPoppingControllerDelegate {
   
-  func poppingBottomViewWillChange(_ viewFrame: CGRect, animationDuration: Double, animationOptions: UIViewAnimationOptions, isShow: Bool) {
+    func poppingBottomViewWillChange(_ viewFrame: CGRect, animationDuration: Double, animationOptions: UIView.AnimationOptions, isShow: Bool) {
     
     guard enable else { return }
     

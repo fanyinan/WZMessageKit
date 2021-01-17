@@ -9,7 +9,7 @@
 import UIKit
 
 protocol WZMessageBottomViewPoppingControllerDelegate: NSObjectProtocol {
-  func poppingBottomViewWillChange(_ viewFrame: CGRect, animationDuration: Double, animationOptions: UIViewAnimationOptions, isShow: Bool)
+    func poppingBottomViewWillChange(_ viewFrame: CGRect, animationDuration: Double, animationOptions: UIView.AnimationOptions, isShow: Bool)
 }
 
 public class WZMessageBottomViewPoppingController: NSObject {
@@ -23,7 +23,7 @@ public class WZMessageBottomViewPoppingController: NSObject {
   let popAnimationDuration: TimeInterval = 0.25
   
   //键盘的弹出动画样式
-  let popAnimationOptions: UIViewAnimationOptions = UIViewAnimationOptions(rawValue: 458752).union(.allowUserInteraction)
+    let popAnimationOptions: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: 458752).union(.allowUserInteraction)
   
   init(withSuperView superView: UIView) {
     self.superView = superView
@@ -53,7 +53,7 @@ public class WZMessageBottomViewPoppingController: NSObject {
     
     initPoppingViewPosition(view)
     
-    superView.bringSubview(toFront: view)
+    superView.bringSubviewToFront(view)
     poppingView = view
     animateBottomView(poppingView: view, isShow: true)
   }
